@@ -1,3 +1,51 @@
-.test {
-  color: #000;
+@import "vars";
+
+html {
+  font-family: Roboto, -apple-system, Arial, sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  line-height: 24px;
+  background-color: #eee;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1260px;
+  padding: 0 15px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  height: 100%;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
