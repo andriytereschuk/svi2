@@ -45,8 +45,9 @@ export default {
   modules: ['@nuxtjs/amp'],
   amp: {
     origin:
-      (isProd && 'https://gifted-elion-0325cc.netlify.app/') ||
+      (isProd && 'https://gifted-elion-0325cc.netlify.app') ||
       'http://localhost:3000',
+    routeAliases: ['/'],
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
