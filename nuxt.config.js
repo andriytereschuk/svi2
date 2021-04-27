@@ -1,3 +1,5 @@
+const isProd = process.env.NODE_ENV === 'production'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -10,6 +12,7 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
+      { name: 'robots', content: 'noindex' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
@@ -39,8 +42,13 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
-
+  modules: ['@nuxtjs/amp'],
+  amp: {
+    origin:
+      (isProd && 'https://gifted-elion-0325cc.netlify.app/') ||
+      'http://localhost:3000',
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  hooks: {},
 }
