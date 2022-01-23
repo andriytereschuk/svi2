@@ -19,7 +19,6 @@
     }
   },
   "dependencies": {
-    "@nuxtjs/amp": "^0.5.4",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3"
   },

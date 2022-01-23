@@ -1,16 +1,11 @@
 <template>
   <header>
-    <div class="top">
-      <div class="container">
-        <div class="row align-center justify-between">
-          <nuxt-link to="/">
-            <img class="logo" src="images/logo.png" alt="" />
-          </nuxt-link>
-        </div>
-      </div>
-    </div>
-    <nav>
-      <div class="container">
+    <div class="container">
+      <nav class="row justify-between align-center">
+        <nuxt-link to="/">
+          <img class="logo" src="images/logo.png" alt="" />
+        </nuxt-link>
+
         <ul class="menu">
           <li v-for="(item, index) of menu" :key="index">
             <nuxt-link :to="item.href" class="menu-item">{{
@@ -18,101 +13,149 @@
             }}</nuxt-link>
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  data: () => {
-    return {
-      menu: [
-        {
-          name: 'Житло',
-          href: '/homes',
-        },
-        {
-          name: 'Про нас',
-          href: '/about-svilake',
-        },
-      ],
-    }
+  computed: {
+    ...mapState('nav', ['menu']),
   },
 }
 </script>
 
 <style lang="scss">
 @import '~/assets/scss/vars.scss';
-$navHeight: 66px;
 
-.top {
-  height: 60px;
+header {
+  height: 50px;
   background-color: #fff;
+  border-bottom: 1px solid silver;
 }
 
 .logo {
-  height: 38px;
-}
-
-nav {
-  background-color: $blue;
-  height: $navHeight;
-  overflow: hidden;
+  width: 100px;
 }
 
 .menu {
   display: flex;
-}
+  font-size: 13px;
 
-.menu {
   li + li {
-    margin-left: 20px;
-  }
-}
-
-.menu-item {
-  line-height: $navHeight;
-  color: #fff;
-  position: relative;
-  display: inline-block;
-
-  &:before {
-    content: '';
-    display: none;
-    top: -1px;
-    left: 50%;
-    position: absolute;
-    margin-left: -8.5px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #fff;
+    margin-left: 43px;
   }
 
-  &:hover {
-    &:before {
-      display: block;
-    }
-  }
+  li {
+    position: relative;
 
-  &.nuxt-link-active {
-    pointer-events: none;
-
-    &:after {
+    &::before {
       content: '';
       display: block;
-      bottom: -1px;
-      left: 50%;
       position: absolute;
-      margin-left: -8.5px;
-      width: 0;
-      height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-bottom: 10px solid #eee;
+      left: -21px;
+      top: 2px;
+      height: 16px;
+      width: 1px;
+      background-color: #cacaca;
+    }
+
+    &:first-child::before {
+      display: none;
+    }
+  }
+
+  a {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+      bottom: -4px;
+      height: 2px;
+      width: 100%;
+      background-color: #000;
+    }
+
+    &:hover::after {
+      display: block;
     }
   }
 }
+
+// $navHeight: 66px;
+
+// .top {
+//   height: 60px;
+//   background-color: #fff;
+// }
+
+// .logo {
+//   height: 38px;
+// }
+
+// nav {
+//   background-color: $blue;
+//   height: $navHeight;
+//   overflow: hidden;
+// }
+
+// .menu {
+//   display: flex;
+// }
+
+// .menu {
+//   li + li {
+//     margin-left: 20px;
+//   }
+// }
+
+// .menu-item {
+//   line-height: $navHeight;
+//   color: #fff;
+//   position: relative;
+//   display: inline-block;
+
+//   &:before {
+//     content: '';
+//     display: none;
+//     top: -1px;
+//     left: 50%;
+//     position: absolute;
+//     margin-left: -8.5px;
+//     width: 0;
+//     height: 0;
+//     border-left: 10px solid transparent;
+//     border-right: 10px solid transparent;
+//     border-top: 10px solid #fff;
+//   }
+
+//   &:hover {
+//     &:before {
+//       display: block;
+//     }
+//   }
+
+//   &.nuxt-link-active {
+//     pointer-events: none;
+
+//     &:after {
+//       content: '';
+//       display: block;
+//       bottom: -1px;
+//       left: 50%;
+//       position: absolute;
+//       margin-left: -8.5px;
+//       width: 0;
+//       height: 0;
+//       border-left: 10px solid transparent;
+//       border-right: 10px solid transparent;
+//       border-bottom: 10px solid #eee;
+//     }
+//   }
+// }
 </style>

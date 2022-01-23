@@ -1,4 +1,4 @@
-const isProd = process.env.NODE_ENV === 'production'
+// const isProd = process.env.NODE_ENV === 'production'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -6,9 +6,9 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'svi2',
+    title: 'SVILAKE',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ua',
     },
     meta: [
       { charset: 'utf-8' },
@@ -18,11 +18,11 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Roboto:400,300&subset=latin,cyrillic',
-      },
+      // {
+      //   rel: 'stylesheet',
+      //   href:
+      //     'https://fonts.googleapis.com/css2?family=Roboto:400,300&subset=latin,cyrillic',
+      // },
     ],
   },
 
@@ -42,13 +42,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/amp'],
-  amp: {
-    origin:
-      (isProd && 'https://gifted-elion-0325cc.netlify.app') ||
-      'http://localhost:3000',
-    routeAliases: ['/'],
-  },
+  modules: [],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   hooks: {},

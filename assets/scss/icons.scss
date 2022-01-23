@@ -1,0 +1,52 @@
+.icon {
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+
+  &-expand {
+    width: 16px;
+    height: 16px;
+    background-image: url('../../static/images/expand.svg');
+  }
+
+  &-plus {
+    width: 16px;
+    height: 16px;
+    background-image: url('../../static/images/plus.svg');
+  }
+
+  &-wifi {
+    background-image: url('../../static/images/wifi.svg');
+  }
+
+  &-pergola {
+    background-image: url('../../static/images/pergola.svg');
+  }
+
+  &-swing {
+    background-image: url('../../static/images/swing.svg');
+  }
+
+  &-barbecue {
+    background-image: url('../../static/images/barbecue.svg');
+  }
+
+  &-trampoline {
+    background-image: url('../../static/images/trampoline.svg');
+  }
+
+  &-park {
+    background-image: url('../../static/images/park.svg');
+  }
+
+  &-pin {
+    background-image: url('../../static/images/pin.svg');
+  }
+
+  &-phone-call {
+    background-image: url('../../static/images/phone-call.svg');
+  }
+}
