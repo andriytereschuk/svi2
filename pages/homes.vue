@@ -1,5 +1,7 @@
 <template>
-  <div>Homes</div>
+  <div class="container">
+    <h1>Все житло</h1>
+  </div>
 </template>
 
 <script>

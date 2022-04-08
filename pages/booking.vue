@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>About</h1>
+    <h1>Бронювання</h1>
   </div>
 </template>
 
