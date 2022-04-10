@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>Як добратись до Світязя і Шацька</h1>
-    <pre>{{ routes }}</pre>
+    <pre>{{ buses }}</pre>
   </div>
 </template>
 
@@ -9,6 +9,10 @@
 import { mapState } from 'vuex'
 
 export default {
+  async fetch({ store, app }) {
+    if (store.state.buses.buses.length) return
+    return await store.dispatch('buses/fetchBuses', app)
+  },
   head: {
     title:
       'Маршрутки, автобуси і експреси на Шацьк, Світязь, Гряду, Лісову пісню, Пансіонат Шацькі озера.',
@@ -31,7 +35,7 @@ export default {
     ],
   },
   computed: {
-    ...mapState('routes', ['routes']),
+    ...mapState('buses', ['buses']),
   },
 }
 </script>

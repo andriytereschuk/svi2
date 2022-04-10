@@ -39,6 +39,13 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: 'tlr3diiavIKuzwFd9riMNwtt',
+        cacheProvider: 'memory',
+      },
+    ],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
