@@ -252,7 +252,6 @@ export default {}
   &-price {
     font-weight: bold;
     font-size: 13px;
-    color: #e01a2b;
     margin-top: 19px;
   }
 }

@@ -3,7 +3,7 @@
     <div class="container">
       <nav class="row justify-between align-center">
         <nuxt-link to="/">
-          <img class="logo" src="images/logo.png" alt="" />
+          <img class="logo" src="/images/logo.svg" alt="" />
         </nuxt-link>
 
         <ul class="menu">

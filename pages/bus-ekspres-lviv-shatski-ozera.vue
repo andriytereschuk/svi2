@@ -1,40 +1,121 @@
 <template>
   <div class="container">
+    <div class="head_title">
+      <h1>Експрес-Бусік Львів - Шацькі озера</h1>
+      <p>
+        Доїзд до Шацька, Світязя, Гряди, Медика, Лісова пісня, пансіонат "Шацькі
+        озера".
+      </p>
+    </div>
     <div class="row_transportation">
       <div class="col_left">
-        <h1>
-          Експрес-Бусік Львів - Шацькі озера (Світязь, Гряда, Медик, Пульмо)
-        </h1>
-
         <div class="card_car">
           <div class="left_img">
-            <img src="/f/153450/700x470/bcac870a39/buss1.jpg" alt="" />
+            <div class="slide_bus">
+              <div class="item_bus">
+                <img
+                  src="https://a.storyblok.com/f/153450/1036x950/f9f7742838/chervonograd-roma.png"
+                  alt=""
+                />
+              </div>
+              <div class="item_bus">
+                <img
+                  src="https://a.storyblok.com/f/153450/600x422/0a87e65704/lutsk1.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
           <div class="right_info">
-            <div class="head">Львів - Шацькі озера</div>
-            <a class="phone" href="tel:0976541951">0976541951</a>
+            <div class="head_route">
+              <div class="head">
+                <span>Львів</span> <span>Шацькі озера</span>
+              </div>
+              <div class="route">
+                <i></i>
+                <span></span>
+                <i></i>
+              </div>
+            </div>
+            <a class="phone" href="tel:0976541951"
+              ><i class="itel"></i> <span>097 654 1951</span></a
+            >
             <div class="time">
-              <span><em>7:00</em> Львів - Шацьк</span
-              ><span><em>16:00</em> Шацьк - Львів</span>
+              <div class="info_head">
+                <i class="itime"></i> Час відправлення
+              </div>
+              <span class="li"><em>7:00</em> Львів - Шацьк</span>
+              <span class="li"><em>16:00</em> Шацьк - Львів</span>
+              <span class="li"><b>Час в дорозі:</b>3 - 3:30 годин</span>
             </div>
 
-            <ul>
-              <li><b>Мікроавтобуси:</b>Volkswagen Transporter, Opel</li>
-              <li><b>Комфорт:</b>розкладні крісла</li>
-              <li><b>Час в дорозі:</b>3 - 3:30 годин</li>
-              <li>
-                <b>Ціни</b><br />
-                <b>220 грн:</b>на Шацьк, Світязь<br />
-                <b>240 грн:</b>на Гряда, Медик, "Лісова Пісня", пансіонат
-                "Шацькі озера", Мельники, Пульмо
-              </li>
-              <li><b>Телефон:</b>097 654 1951</li>
-            </ul>
-            <p>Лише одна зупинка на каву, без заїздів на автостанції.</p>
+            <div class="price_bus">
+              <div class="info_head"><i class="iprice"></i>Ціни:</div>
+              <span class="li"><b>220 грн:</b>на Шацьк, Світязь</span>
+              <span class="li"
+                ><b>240 грн:</b>на Гряда, Медик, "Лісова Пісня", пансіонат
+                "Шацькі озера", Мельники, Пульмо</span
+              >
+            </div>
+
+            <div class="model_bus">
+              <div class="info_head"><i class="ibus"></i> Мікроавтобуси</div>
+              <span class="li">Volkswagen Transporter</span>
+              <span class="li">Opel</span>
+            </div>
+            <div class="star_bus">
+              <div class="info_head"><i class="istar"></i>Комфорт:</div>
+              <span class="li">розкладні крісла</span>
+              <span class="li">кондиціонер</span>
+            </div>
+
+            <p><b>Лише одна зупинка на каву, без заїздів на автостанції.</b></p>
+            <p>
+              Забронювати місця можна зателефонувавши до диспетчера за номером
+              тел. 097 654 1951.
+            </p>
           </div>
         </div>
       </div>
-      <div class="col_right"></div>
+      <div class="col_right">
+        <div class="sidebar_title">Проживання &#127969;</div>
+        <div class="box">
+          <a href="/" class="card">
+            <div class="box-img">
+              <img src="/content/homes/4/1.jpg" alt="" />
+            </div>
+            <div class="box-desc">
+              <div class="box_sub">
+                <div class="box-title">Котедж</div>
+                <div class="box-info">Будинок на 8-10 чол</div>
+                <div class="box-price">3000 грн/доба</div>
+              </div>
+              <span class="btn btn_orange">Переглянути</span>
+            </div>
+          </a>
+        </div>
+        <div class="box">
+          <a href="/" class="card">
+            <div class="box-img">
+              <img src="/content/homes/4/1.jpg" alt="" />
+            </div>
+            <div class="box-desc">
+              <div class="box_sub">
+                <div class="box-title">Кімната</div>
+                <div class="box-info">Двохмісни номер на 2чол</div>
+                <div class="box-price">3000 грн/доба</div>
+              </div>
+              <span class="btn btn_orange">Переглянути</span>
+            </div>
+          </a>
+        </div>
+        <div class="flex-center">
+          <a href="" class="btn btn--primary"
+            ><i class="icon icon-plus"></i>
+            <span>дивитися всі пропозиції</span></a
+          >
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -63,5 +144,3 @@ export default {
   },
 }
 </script>
-
-<style></style>

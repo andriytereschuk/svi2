@@ -1,6 +1,121 @@
 <template>
   <div class="container">
-    <h1>Автобус-Експрес Рівне - Шацькі озера</h1>
+    <div class="head_title">
+      <h1>Експрес-Бус Рівне - Шацькі озера</h1>
+      <p>
+        Доїзд до Шацька, Світязя, Гряди, Медика, Лісова пісня, пансіонат "Шацькі
+        озера".
+      </p>
+    </div>
+    <div class="row_transportation">
+      <div class="col_left">
+        <div class="card_car">
+          <div class="left_img">
+            <div class="slide_bus">
+              <div class="item_bus">
+                <img
+                  src="https://a.storyblok.com/f/153450/600x430/285c4d6203/rivne1.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="item_bus">
+                <img
+                  src="https://a.storyblok.com/f/153450/600x415/2de71696a6/rivne2.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="right_info">
+            <div class="head_route">
+              <div class="head">
+                <span>Рівне</span> <span>Шацькі озера</span>
+              </div>
+              <div class="route">
+                <i></i>
+                <span></span>
+                <i></i>
+              </div>
+            </div>
+            <a class="phone" href="tel:0979519096"
+              ><i class="itel"></i> <span>(097) 951-90-96</span></a
+            >
+            <a class="phone" href="tel:0934097038"
+              ><i class="itel"></i> <span>(093) 409-70-38</span></a
+            >
+            <div class="time">
+              <div class="info_head">
+                <i class="itime"></i> Час відправлення
+              </div>
+              <span class="li"><em>7:30</em> Рівне - Шацьк</span>
+              <span class="li"><em>15:30</em> Шацьк - Рівне</span>
+              <span class="li"><b>Час в дорозі:</b>4:00 годин</span>
+            </div>
+
+            <div class="price_bus">
+              <div class="info_head"><i class="iprice"></i>Ціни:</div>
+              <span class="li"><b>200 грн:</b>на Шацьк, Світязь</span>
+            </div>
+
+            <div class="model_bus">
+              <div class="info_head"><i class="ibus"></i> Мікроавтобуси</div>
+              <span class="li">SETRA 309 Top class</span>
+              <span class="li">Мersedes SPRINTER</span>
+            </div>
+            <div class="star_bus">
+              <div class="info_head"><i class="istar"></i>Комфорт:</div>
+              <span class="li">кондиціонер</span>
+              <span class="li">телевізор</span>
+            </div>
+
+            <p><b>Лише одна зупинка на каву, без заїздів на автостанції.</b></p>
+            <p>
+              Забронювати місця можна зателефонувавши до диспетчера за номером
+              тел. (097) 951-90-96, (093) 409-70-38.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col_right">
+        <div class="sidebar_title">Проживання &#127969;</div>
+        <div class="box">
+          <a href="/" class="card">
+            <div class="box-img">
+              <img src="/content/homes/4/1.jpg" alt="" />
+            </div>
+            <div class="box-desc">
+              <div class="box_sub">
+                <div class="box-title">Котедж</div>
+                <div class="box-info">Будинок на 8-10 чол</div>
+                <div class="box-price">3000 грн/доба</div>
+              </div>
+              <span class="btn btn_orange">Переглянути</span>
+            </div>
+          </a>
+        </div>
+        <div class="box">
+          <a href="/" class="card">
+            <div class="box-img">
+              <img src="/content/homes/4/1.jpg" alt="" />
+            </div>
+            <div class="box-desc">
+              <div class="box_sub">
+                <div class="box-title">Кімната</div>
+                <div class="box-info">Двохмісни номер на 2чол</div>
+                <div class="box-price">3000 грн/доба</div>
+              </div>
+              <span class="btn btn_orange">Переглянути</span>
+            </div>
+          </a>
+        </div>
+        <div class="flex-center">
+          <a href="" class="btn btn--primary"
+            ><i class="icon icon-plus"></i>
+            <span>дивитися всі пропозиції</span></a
+          >
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

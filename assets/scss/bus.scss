@@ -1,0 +1,524 @@
+@import 'vars';
+
+.row_transportation {
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar_title {
+  display: none;
+}
+.col_left {
+  width: calc(100% - 350px);
+}
+
+.col_right {
+  width: 330px;
+}
+
+ul.list_transportation {
+  display: flex;
+  flex-direction: column;
+}
+
+.bus {
+  display: flex;
+  margin-bottom: 30px;
+  box-shadow: 0px 5px 40px rgb(45 141 254 / 12%);
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bus_img {
+  height: 170px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bus > div {
+  width: 25%;
+}
+
+.bus_img img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.bus .bus_info {
+  display: inline-flex;
+  flex-direction: column;
+  padding-left: 80px;
+  width: 50%;
+}
+
+.btn_more,
+.btn_blue,
+.btn_orange {
+  background: #0e77f1;
+  color: #fff;
+  height: 34px;
+  text-transform: capitalize;
+  padding: 0 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+  &:hover {
+    background: #0b468b;
+  }
+}
+.btn_orange {
+  background: #ee8e00;
+  &:hover {
+    background: #c67600;
+  }
+}
+.bus_more {
+  display: flex;
+  justify-content: center;
+}
+.bus_more {
+  display: flex;
+  justify-content: center;
+}
+
+.bus_info span {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 120%;
+  color: #0e77f1;
+  padding: 10px 0;
+}
+
+h1 {
+  color: #001e41;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 120%;
+  padding: 20px 0 10px;
+}
+.col_left > p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+.col_right .box {
+  box-shadow: 0px 5px 40px rgba(45, 141, 254, 0.12);
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.head_title p {
+  font-size: 18px;
+}
+.head_title {
+  margin-bottom: 50px;
+}
+.box-desc {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.box_sub {
+  width: calc(100% - 115px);
+}
+
+.box-title {
+  font-size: 18px;
+  display: flex;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.box-price {
+  background: #fff3d0;
+  display: inline-flex;
+  padding: 2px 4px;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+.box-img {
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-img img {
+  object-fit: contain;
+}
+
+@media (max-width: 1400px) {
+  .bus .bus_info {
+    padding-left: 40px;
+    width: 100%;
+  }
+  li.bus {
+    flex-wrap: inherit;
+  }
+  .bus .bus_img {
+    width: 230px;
+    flex-shrink: 0;
+  }
+  .bus .bus_more {
+    width: 200px;
+    flex-shrink: 0;
+  }
+}
+@media (max-width: 1200px) {
+  .bus .bus_info {
+    padding-left: 20px;
+  }
+  .bus .bus_more {
+    width: 150px;
+  }
+  .bus_info span {
+    font-size: 18px;
+  }
+}
+@media (max-width: 990px) {
+  .bus .bus_info {
+    padding-left: 20px;
+    padding-bottom: 50px;
+  }
+  .bus_info span {
+    font-size: 16px;
+  }
+  .col_right {
+    width: 230px;
+  }
+  .box-img {
+    height: 130px;
+  }
+  .box_sub {
+    width: 100%;
+  }
+  .box-desc {
+    flex-direction: column;
+  }
+  .box-desc .btn_orange {
+    margin-top: 15px;
+  }
+  a.btn.btn--primary {
+    padding: 10px 5px;
+    font-size: 12px;
+  }
+  .col_left {
+    width: calc(100% - 250px);
+  }
+  li.bus {
+    position: relative;
+  }
+  .bus .bus_more {
+    position: absolute;
+    bottom: 15px;
+    left: 226px;
+    width: 150px;
+  }
+}
+@media (max-width: 767px) {
+  .head_title h1 {
+    font-size: 26px;
+  }
+  .head_title p {
+    font-size: 16px;
+  }
+  .head_title {
+    margin-bottom: 35px;
+  }
+  .col_left {
+    width: 100%;
+  }
+  .row_transportation {
+    flex-direction: column;
+  }
+  .bus .bus_img {
+    width: 140px;
+    height: 150px;
+  }
+  .bus .bus_info {
+    padding-left: 15px;
+    padding-bottom: 40px;
+  }
+  .bus_info span {
+    font-size: 14px;
+    padding-right: 5px;
+    padding-top: 2px;
+  }
+  .bus .bus_more {
+    left: 130px;
+    bottom: 10px;
+  }
+  li.bus {
+    margin-bottom: 15px;
+  }
+  .col_right {
+    width: 100%;
+  }
+  .sidebar_title {
+    display: block;
+    font-size: 28px;
+    padding: 50px 0 20px;
+  }
+}
+
+/* start bus-ekspres-lviv-shatski-ozera */
+
+.card_car {
+  display: flex;
+  margin-bottom: 30px;
+  box-shadow: 0px 5px 40px rgb(45 141 254 / 12%);
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+.left_img {
+  width: 400px;
+  flex-shrink: 0;
+}
+.item_bus img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.right_info {
+  width: 100%;
+  padding: 20px 20px 20px 40px;
+}
+.right_info .head {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 120%;
+  color: rgb(5, 71, 82);
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.right_info a.phone {
+  display: inline-flex;
+  align-items: center;
+  font-size: 20px;
+}
+.right_info i {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+.head_route {
+  max-width: 700px;
+}
+i.itel {
+  background-image: url(/images/phone.svg);
+}
+i.itime {
+  background-image: url(/images/time2.svg);
+  background-size: 35px;
+}
+i.ibus {
+  background-image: url(/images/bus.svg);
+  background-size: 35px;
+}
+i.istar {
+  background-image: url(/images/star.svg);
+}
+i.iprice {
+  background-image: url(/images/price.svg);
+}
+.info_head {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+.right_info .head_route ~ * {
+  margin-bottom: 15px;
+}
+.right_info .li {
+  display: block;
+  padding: 3px 2px 3px 40px;
+  position: relative;
+}
+.time em {
+  font-style: normal;
+  font-weight: bold;
+  display: inline-block;
+  background: #c6e3a4;
+  padding: 2px 4px;
+  border-radius: 2px;
+  min-width: 50px;
+  text-align: center;
+  margin-right: 5px;
+}
+.time b {
+  display: inline-block;
+  margin-right: 5px;
+}
+.price_bus b {
+  font-style: normal;
+  font-weight: bold;
+  display: inline-block;
+  background: #fff3d0;
+  padding: 2px 4px;
+  border-radius: 2px;
+  min-width: 70px;
+  text-align: center;
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+.price_bus .li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.right_info .route {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  margin-bottom: 30px;
+}
+.route i {
+  display: inline-flex;
+  width: 15px !important;
+  height: 15px !important;
+  border: 3px solid rgb(5, 71, 82);
+  margin: 0px !important;
+  border-radius: 50%;
+}
+.route span {
+  width: 100%;
+  border-bottom: 3px solid rgb(5, 71, 82);
+}
+a.phone span {
+  color: #0e77f1;
+  border-bottom: 1px solid #0e77f1;
+}
+.model_bus .li:before,
+.star_bus .li:before {
+  content: '-';
+  display: inline-flex;
+  margin-right: 5px;
+  color: #0e77f1;
+  font-weight: bold;
+}
+.slide_bus {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.item_bus {
+  height: 100%;
+}
+.head_route {
+  max-width: 700px;
+}
+@media (max-width: 1300px) {
+  .left_img {
+    width: 320px;
+  }
+
+  .right_info {
+    padding: 20px 20px 20px 20px;
+  }
+}
+@media (max-width: 990px) {
+  .left_img {
+    width: 220px;
+  }
+  .head_route {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-bottom: 20px;
+  }
+  .right_info .route {
+    padding: 0;
+    flex-direction: column;
+    height: 60px;
+    margin: 0;
+    padding: 6px 0px 6px 6px;
+  }
+  .head_route .head span {
+    display: flex;
+    padding: 3px 0;
+  }
+  .right_info .head {
+    flex-direction: column;
+    width: 100%;
+    padding-left: 15px;
+    font-size: 20px;
+    padding-bottom: 0;
+  }
+  .route span {
+    border-bottom: 3px solid rgb(5, 71, 82);
+    border-right: 3px solid rgb(5, 71, 82);
+    width: 0;
+    height: 100%;
+  }
+  .route i {
+    flex-shrink: 0;
+  }
+  .right_info i {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+  }
+  .right_info a.phone {
+    font-size: 18px;
+    padding-bottom: 20px;
+  }
+  i.itime {
+    background-size: 29px;
+  }
+  .right_info {
+    padding: 15px 5px 0px 15px;
+  }
+  .right_info .li {
+    padding: 3px 2px 3px 28px;
+  }
+  .info_head {
+    margin-bottom: 5px;
+  }
+  i.ibus {
+    background-size: 30px;
+  }
+  .price_bus .li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .price_bus .li + .li {
+    position: relative;
+    padding-top: 12px;
+  }
+  .price_bus .li + .li:before {
+    content: '';
+    display: inline-flex;
+    width: calc(100% - 40px);
+    border-top: 1px dashed #607d8b;
+    position: absolute;
+    top: 0;
+    left: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .card_car {
+    flex-direction: column-reverse;
+  }
+  .right_info {
+    padding: 15px 15px 0;
+  }
+  .left_img {
+    width: 100%;
+  }
+}
+/* end bus-ekspres-lviv-shatski-ozera */
