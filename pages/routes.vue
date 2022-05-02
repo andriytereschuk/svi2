@@ -10,7 +10,7 @@
     <div class="row_transportation">
       <div class="col_left">
         <ul class="list_transportation">
-          <li class="bus" v-for="(bus, index) of buses" :key="index">
+          <li v-for="(bus, index) of buses" :key="index" class="bus">
             <div class="bus_img">
               <img :src="bus.content.image.filename" alt="bus" />
             </div>
@@ -119,7 +119,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .row_transportation {
   display: flex;
   justify-content: space-between;

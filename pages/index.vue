@@ -2,7 +2,7 @@
   <div class="container">
     <section class="intro">
       <div class="main-img">
-        <button class="btn btn--primary">
+        <button class="btn btn--primary" @click="openGallery">
           <i class="icon icon-expand"></i>
           <span>фото галерея</span>
         </button>
@@ -125,11 +125,44 @@
         <i class="icon icon-plus"></i> <span>дивитися всі пропозиції</span></a
       >
     </div>
+
+    <vue-easy-lightbox
+      :visible="isGalleryOpened"
+      :imgs="images"
+      move-disabled
+      @hide="closeGallery"
+    ></vue-easy-lightbox>
   </div>
 </template>
 
 <script>
-export default {}
+import { mapState } from 'vuex'
+
+export default {
+  data() {
+    return {
+      isGalleryOpened: false,
+    }
+  },
+  async fetch({ store, app }) {
+    if (store.state.gallery.slides.length) return
+    return await store.dispatch('gallery/get', app)
+  },
+  computed: {
+    ...mapState('gallery', ['slides']),
+    images() {
+      return this.slides.map(({ image: { filename } }) => filename)
+    },
+  },
+  methods: {
+    openGallery() {
+      this.isGalleryOpened = true
+    },
+    closeGallery() {
+      this.isGalleryOpened = false
+    },
+  },
+}
 </script>
 
 <style lang="scss">
