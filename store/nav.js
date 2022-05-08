@@ -6,7 +6,7 @@ const initialState = {
     },
     {
       name: 'Котедж',
-      href: '/homes/5',
+      href: '/cottage',
     },
     {
       name: 'Про нас',
