@@ -3,7 +3,12 @@
     <h1>Житло</h1>
     <ul>
       <li v-for="(category, index) of items" :key="index">
-        <nuxt-link :to="`homes/${category.link}`">
+        <nuxt-link
+          :to="{
+            name: 'homes-id',
+            params: { id: category.link },
+          }"
+        >
           <h2>{{ category.name }}</h2>
           <span v-if="minPrices[category.link]"
             >від {{ minPrices[category.link] }} грн</span
