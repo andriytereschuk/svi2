@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="title">Проживання &#127969;</div>
+    <!-- <div class="title">Проживання &#127969;</div>
     <div class="box">
       <a href="/" class="card">
         <div class="box-img">
@@ -50,7 +50,7 @@
       <a href="" class="btn btn--primary"
         ><i class="icon icon-plus"></i> <span>дивитися всі пропозиції</span></a
       >
-    </div>
+    </div> -->
   </div>
 </template>
 

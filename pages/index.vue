@@ -63,75 +63,24 @@
       </div>
     </section>
     <section class="top-props">
-      <div class="box">
-        <div class="box-img">
-          <img src="/content/homes/4/1.jpg" alt="" />
-        </div>
-        <div class="box-desc">
-          <div>
-            <div class="box-title">Котедж</div>
-            <div class="box-info">Будинок на 8-10 чол</div>
-          </div>
-          <div>
-            <div class="box-price">3000 грн/доба</div>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="box-img">
-          <img src="/content/homes/4/1.jpg" alt="" />
-        </div>
-        <div class="box-desc">
-          <div>
-            <div class="box-title">Котедж</div>
-            <div class="box-info">Будинок на 8-10 чол</div>
-          </div>
-          <div>
-            <div class="box-price">3000 грн/доба</div>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="box-img">
-          <img src="/content/homes/4/1.jpg" alt="" />
-        </div>
-        <div class="box-desc">
-          <div>
-            <div class="box-title">Котедж</div>
-            <div class="box-info">Будинок на 8-10 чол</div>
-          </div>
-          <div>
-            <div class="box-price">3000 грн/доба</div>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="box-img">
-          <img src="/content/homes/4/1.jpg" alt="" />
-        </div>
-        <div class="box-desc">
-          <div>
-            <div class="box-title">Котедж</div>
-            <div class="box-info">Будинок на 8-10 чол</div>
-          </div>
-          <div>
-            <div class="box-price">3000 грн/доба</div>
-          </div>
-        </div>
-      </div>
+      <template v-for="(card, index) of cards">
+        <Card :key="index" :card="card"></Card>
+      </template>
     </section>
-    <div class="flex-center">
+    <!-- <div class="flex-center">
       <a class="btn btn--primary" href="">
         <i class="icon icon-plus"></i> <span>дивитися всі пропозиції</span></a
       >
-    </div>
+    </div> -->
 
-    <vue-easy-lightbox
-      :visible="isGalleryOpened"
-      :imgs="images"
-      move-disabled
-      @hide="closeGallery"
-    ></vue-easy-lightbox>
+    <client-only>
+      <vue-easy-lightbox
+        :visible="isGalleryOpened"
+        :imgs="images"
+        move-disabled
+        @hide="closeGallery"
+      ></vue-easy-lightbox>
+    </client-only>
   </div>
 </template>
 
@@ -142,6 +91,34 @@ export default {
   data() {
     return {
       isGalleryOpened: false,
+      cards: [
+        {
+          title: 'Котедж',
+          info: 'Будинок на 8-10 чол',
+          image: '/content/homes/4/1.jpg',
+          price: '3000 грн/доба',
+        },
+        {
+          title: 'Двомісний',
+          info: '',
+          image: 'https://a.storyblok.com/f/153450/580x363/27cf969e6c/k10.jpg',
+          price: '350 грн/доба',
+        },
+        {
+          title: 'Двомісний + 1',
+          info: '',
+          image:
+            'https://a.storyblok.com/f/153450/580x400/4581ffa06f/b2-k1.jpg',
+          price: '450 грн/доба',
+        },
+        {
+          title: 'Чотирихмісний',
+          info: '',
+          image:
+            'https://a.storyblok.com/f/153450/580x400/e350865437/k11-2.jpg',
+          price: '600 грн/доба',
+        },
+      ],
     }
   },
   async fetch({ store, app }) {
@@ -259,33 +236,6 @@ export default {
 
   li + li {
     margin-left: 30px;
-  }
-}
-
-.box {
-  background-color: #fff;
-  box-shadow: 0 7px 12px -4px rgb(0 0 0 / 15%);
-
-  &-desc {
-    padding: 5px 15px 15px 15px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &-title {
-    font-size: 15px;
-    font-weight: 700;
-    font-family: Arial;
-  }
-
-  &-info {
-    font-size: 13px;
-  }
-
-  &-price {
-    font-weight: bold;
-    font-size: 13px;
-    margin-top: 19px;
   }
 }
 
