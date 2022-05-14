@@ -97,12 +97,14 @@ export default {
           info: 'Будинок на 8-10 чол',
           image: '/content/homes/4/1.jpg',
           price: '3000 грн/доба',
+          link: '',
         },
         {
           title: 'Двомісний',
           info: '',
           image: 'https://a.storyblok.com/f/153450/580x363/27cf969e6c/k10.jpg',
           price: '350 грн/доба',
+          link: '',
         },
         {
           title: 'Двомісний + 1',
@@ -110,6 +112,7 @@ export default {
           image:
             'https://a.storyblok.com/f/153450/580x400/4581ffa06f/b2-k1.jpg',
           price: '450 грн/доба',
+          link: '',
         },
         {
           title: 'Чотирихмісний',
@@ -117,6 +120,7 @@ export default {
           image:
             'https://a.storyblok.com/f/153450/580x400/e350865437/k11-2.jpg',
           price: '600 грн/доба',
+          link: '',
         },
       ],
     }

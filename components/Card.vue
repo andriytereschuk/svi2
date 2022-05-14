@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <nuxt-link :to="card.link" class="card">
     <div class="card-img" :style="style"></div>
     <div class="card-desc">
       <div>
@@ -10,7 +10,7 @@
         <div class="card-price">{{ card.price }}</div>
       </div>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>

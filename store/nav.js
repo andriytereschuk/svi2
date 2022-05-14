@@ -1,9 +1,9 @@
 const initialState = {
   menu: [
-    // {
-    //   name: 'Все житло',
-    //   href: '/homes',
-    // },
+    {
+      name: 'Все житло',
+      href: '/homes',
+    },
     // {
     //   name: 'Котедж',
     //   href: '/homes/5',
