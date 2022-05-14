@@ -4,12 +4,12 @@
 
     <section class="filter">
       <label>
+        <nuxt-link to="homes">Будинки</nuxt-link>
         <input v-model="filter" type="radio" value="homes" />
         <span>Будинки</span>
       </label>
 
       <label>
-        <nuxt-link to="rooms">Кімнати</nuxt-link>
         <input v-model="filter" type="radio" value="rooms" />
         <span>Кімнати</span>
       </label>
@@ -39,7 +39,7 @@ import { mapState } from 'vuex'
 
 export default {
   data: () => ({
-    filter: 'homes',
+    filter: 'rooms',
   }),
   fetch({ store, app }) {
     return Promise.all([
@@ -52,25 +52,8 @@ export default {
     ])
   },
   head: {
-    title:
-      'Кімнати і літні будиночки з хорошими умовами, які можна зняти в Шацьку в селі Світязь',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          'На сайті SVILAKE можна знайти літні будиночки і кімнати з різнимим умовами і зручностями, переглянути фотографії і які підійдуть для різних верств населення.',
-      },
-      {
-        name: 'keywords',
-        content:
-          'кімнати,будиночки,деревяні,літній,хорші,умови,світязь,свитязь,шацк,озеро,шацьк',
-      },
-      {
-        property: 'og:url',
-        content: 'http://svilake.com/homes',
-      },
-    ],
+    title: 'Категорії кімнат',
+    meta: [],
   },
   computed: {
     ...mapState('categories', ['categories']),
