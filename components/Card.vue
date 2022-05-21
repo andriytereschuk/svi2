@@ -35,8 +35,14 @@ export default {
 @import '~/assets/scss/vars.scss';
 
 .card {
+  display: block;
   background-color: #fff;
   box-shadow: 0 7px 12px -4px rgb(0 0 0 / 15%);
+  transition: ease-in 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 
   &-desc {
     height: 60px;

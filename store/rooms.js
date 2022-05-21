@@ -4,9 +4,10 @@ const initialState = {
 
 export const actions = {
   async fetchRooms({ commit }, app) {
+    const version = app.context.isDev ? 'draft' : 'published'
     const response = await app.$storyapi.get(`cdn/stories/`, {
       starts_with: 'rooms',
-      version: 'published',
+      version,
     })
     const items = response.data.stories.map(
       ({ content: { items } }) => items[0]

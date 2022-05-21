@@ -15,25 +15,7 @@
       </label>
     </section>
 
-    <template v-for="(card, index) of cards">
-      <Card :key="index" :card="card"></Card>
-    </template>
-    <!-- <ul>
-      <li v-for="(category, index) of cards" :key="index">
-        <nuxt-link
-          :to="{
-            name: 'homes-id',
-            params: { id: category.link },
-          }"
-        >
-          <h2>{{ category.name }}</h2>
-          <span v-if="minPrices[category.link]"
-            >від {{ minPrices[category.link] }} грн</span
-          >
-          <img :src="category.image.filename" alt="" />
-        </nuxt-link>
-      </li>
-    </ul> -->
+    <Cards :cards="cards" />
   </div>
 </template>
 
@@ -84,7 +66,9 @@ export default {
         },
         title: content.name,
         image: content.image.filename,
-        price: `від ${this.minPrices[category]} грн`,
+        price: this.minPrices[category]
+          ? `від ${this.minPrices[category]} грн`
+          : '',
       }))
     },
   },

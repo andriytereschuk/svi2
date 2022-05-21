@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>{{ title }}</h1>
+    <Intro :data="content" :is-services="false"></Intro>
   </div>
 </template>
 
@@ -29,6 +29,18 @@ export default {
     },
     title() {
       return this.room?.title
+    },
+    content() {
+      if (!this.room) return {}
+
+      const { slides, title, price, description } = this.room
+
+      return {
+        slides,
+        title,
+        price,
+        description,
+      }
     },
   },
 }

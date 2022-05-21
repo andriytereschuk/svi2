@@ -15,22 +15,7 @@
       </label>
     </section>
 
-    <ul>
-      <li v-for="(category, index) of items" :key="index">
-        <nuxt-link
-          :to="{
-            name: 'homes-id',
-            params: { id: category.link },
-          }"
-        >
-          <h2>{{ category.name }}</h2>
-          <span v-if="minPrices[category.link]"
-            >від {{ minPrices[category.link] }} грн</span
-          >
-          <img :src="category.image.filename" alt="" />
-        </nuxt-link>
-      </li>
-    </ul>
+    <Cards :cards="cards" />
   </div>
 </template>
 
@@ -43,12 +28,9 @@ export default {
   }),
   fetch({ store, app }) {
     return Promise.all([
-      store.state.categories.categories.length
+      store.state.homes.homes.length
         ? Promise.resolve()
-        : store.dispatch('categories/fetchCategories', app),
-      store.state.rooms.rooms.length
-        ? Promise.resolve()
-        : store.dispatch('rooms/fetchRooms', app),
+        : store.dispatch('homes/fetchHomes', app),
     ])
   },
   head: {
@@ -73,25 +55,18 @@ export default {
     ],
   },
   computed: {
-    ...mapState('categories', ['categories']),
-    ...mapState('rooms', ['rooms']),
-    minPrices() {
-      return this.rooms.reduce((acc, { category, price }) => {
-        const link = category.cached_url.split('/')[1]
-
-        if (acc[link]) {
-          acc[link] = Math.min(acc[link], price)
-        } else {
-          acc[link] = price
-        }
-
-        return acc
-      }, {})
-    },
-    items() {
-      return this.categories.map(({ name, content }) => ({
-        link: name,
-        ...content,
+    ...mapState('homes', ['homes']),
+    cards() {
+      return this.homes.map(({ name, content }) => ({
+        link: {
+          name: 'homes-home',
+          params: {
+            home: name,
+          },
+        },
+        title: content.title,
+        info: content.info,
+        image: content.mainImage.filename,
       }))
     },
   },

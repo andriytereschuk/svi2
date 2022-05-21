@@ -35,7 +35,7 @@ export default {
     ...mapState('categories', ['categories']),
     ...mapState('rooms', ['rooms']),
     id() {
-      return this.$route.params.id
+      return this.$route.params.category
     },
     category() {
       return this.categories.find(({ name }) => name === this.id)
@@ -49,6 +49,18 @@ export default {
 
         return link === this.id
       })
+    },
+    cards() {
+      return this.items.map(
+        ({ _uid: id, title, price, type: info, slides }) => ({
+          link: {
+            name: 'rooms-id',
+            params: {
+              id,
+            },
+          },
+        })
+      )
     },
   },
 }
