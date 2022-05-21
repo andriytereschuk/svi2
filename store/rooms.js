@@ -1,23 +1,25 @@
 const initialState = {
-  buses: [],
+  rooms: [],
 }
 
 export const actions = {
-  async fetchBuses({ commit }, app) {
+  async fetchRooms({ commit }, app) {
     const version = app.context.isDev ? 'draft' : 'published'
     const response = await app.$storyapi.get(`cdn/stories/`, {
-      starts_with: 'buses',
+      starts_with: 'rooms',
       version,
     })
-    const list = response.data.stories
+    const items = response.data.stories.map(
+      ({ content: { items } }) => items[0]
+    )
 
-    commit('setBuses', list)
+    commit('setRooms', items)
   },
 }
 
 export const mutations = {
-  setBuses(state, buses) {
-    state.buses = buses
+  setRooms(state, items) {
+    state.rooms = items
   },
 }
 

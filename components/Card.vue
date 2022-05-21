@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <nuxt-link :to="card.link" class="card">
     <div class="card-img" :style="style"></div>
     <div class="card-desc">
       <div>
@@ -10,7 +10,7 @@
         <div class="card-price">{{ card.price }}</div>
       </div>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -35,8 +35,15 @@ export default {
 @import '~/assets/scss/vars.scss';
 
 .card {
+  display: block;
   background-color: #fff;
   box-shadow: 0 7px 12px -4px rgb(0 0 0 / 15%);
+  transition: ease-in 0.2s;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 2px 10px 2px rgb(0 0 0 / 25%);
+  }
 
   &-desc {
     height: 60px;

@@ -1,0 +1,37 @@
+// atomic
+
+.pt-40 {
+  padding-top: 40px;
+}
+
+.pb-40 {
+  padding-bottom: 40px;
+}
+
+// specific
+.filter {
+  margin-bottom: 30px;
+
+  label {
+    padding: 4px 0;
+    margin-right: 15px;
+    position: relative;
+  }
+
+  a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  span {
+    margin-left: 3px;
+    position: relative;
+    top: -2px;
+  }
+}
