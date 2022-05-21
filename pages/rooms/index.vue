@@ -59,7 +59,7 @@ export default {
     cards() {
       return this.categories.map(({ name: category, content }) => ({
         link: {
-          name: 'rooms-category',
+          name: 'categories-category',
           params: {
             category,
           },

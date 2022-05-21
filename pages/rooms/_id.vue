@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Intro :data="content" :is-services="false"></Intro>
+    <Intro v-if="id" :data="content" :is-services="!id"></Intro>
   </div>
 </template>
 
@@ -33,13 +33,27 @@ export default {
     content() {
       if (!this.room) return {}
 
-      const { slides, title, price, description } = this.room
+      const { title, slides, price, description, type, home, category } =
+        this.room
 
       return {
-        slides,
         title,
+        slides,
+        image: slides[0]?.image?.filename,
         price,
         description,
+        meta: {
+          type,
+          home: {
+            link: `/${home.cached_url}`,
+            name: home.cached_url.split('/')[1],
+          },
+          category: {
+            link: `/${category.cached_url}`,
+            name: this.categories.find(({ uuid }) => uuid === category.id)
+              ?.content?.name,
+          },
+        },
       }
     },
   },

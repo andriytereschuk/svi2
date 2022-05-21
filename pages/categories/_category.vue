@@ -2,18 +2,7 @@
   <div class="container">
     <h1>{{ title }}</h1>
 
-    <ul>
-      <li v-for="(room, index) of items" :key="index">
-        <nuxt-link
-          :to="{
-            name: 'rooms-id',
-            params: { id: room._uid },
-          }"
-        >
-          <h2>{{ room.title }}</h2>
-        </nuxt-link>
-      </li>
-    </ul>
+    <Cards :cards="cards" />
   </div>
 </template>
 
@@ -59,6 +48,10 @@ export default {
               id,
             },
           },
+          title,
+          info,
+          price: price ? `${price} грн` : '',
+          image: slides[0]?.image?.filename,
         })
       )
     },

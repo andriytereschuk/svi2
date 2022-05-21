@@ -41,7 +41,8 @@ export default {
   transition: ease-in 0.2s;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 2px 10px 2px rgb(0 0 0 / 25%);
   }
 
   &-desc {

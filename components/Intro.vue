@@ -12,26 +12,53 @@
     </div>
 
     <div class="intro-info">
-      <h1 v-if="data.title">{{ data.title }}</h1>
-      <h1 v-else>
+      <h1 v-if="data.title === 'svilake'">
         Маєток <strong>SVILAKE</strong> - проживання на Світязі в приватному
         секторі
       </h1>
+      <h1 v-else-if="data.title">{{ data.title }}</h1>
 
-      <div class="subtitle">Наші cервіси:</div>
+      <div v-if="data.price" class="price-big">
+        <div class="price-value">
+          <span>{{ data.price }}</span> <b>грн</b>
+        </div>
+        <div class="price-notice"><sup>*</sup> за номер</div>
+      </div>
 
-      <ul class="services">
-        <li v-for="(service, index) of services" :key="index">
-          <i class="icon" :class="getServiceClass(service)"></i>
-          <span>{{ service }}</span>
+      <ul v-if="data.meta" class="meta">
+        <li>
+          <b>Категорія:</b>
+          <nuxt-link :to="data.meta.category.link">{{
+            data.meta.category.name
+          }}</nuxt-link>
+        </li>
+        <li>
+          <b>Будинок:</b>
+          <nuxt-link :to="data.meta.home.link">{{
+            data.meta.home.name
+          }}</nuxt-link>
+        </li>
+        <li>
+          <b>Тип:</b> <span>{{ data.meta.type }}</span>
         </li>
       </ul>
+
+      <div v-if="isServices">
+        <div class="subtitle">Наші cервіси:</div>
+
+        <ul class="services">
+          <li v-for="(service, index) of services" :key="index">
+            <i class="icon" :class="getServiceClass(service)"></i>
+            <span>{{ service }}</span>
+          </li>
+        </ul>
+      </div>
 
       <RichText v-if="data.description" :text="data.description" />
 
       <slot></slot>
 
-      <ul v-if="isServices" class="quick-contacts">
+      <ul class="quick-contacts">
         <li><i class="icon icon-phone-call"></i> <span>+380976541951</span></li>
         <li>
           <i class="icon icon-pin"></i>
@@ -67,6 +94,7 @@ export default {
       type: Object,
       default: () => ({
         image: '',
+        price: 0,
         slides: [],
         services: [],
       }),
@@ -127,11 +155,14 @@ export default {
     flex-basis: 43%;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: $light;
   }
 
   &-info {
     flex: 1;
     padding: 0 20px 20px 20px;
+    min-height: 461px;
+    position: relative;
   }
 }
 
@@ -202,6 +233,73 @@ button {
 
   li + li {
     margin-left: 30px;
+  }
+}
+
+.price-big {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.price-value {
+  padding: 0 40px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background-color: $primary;
+  color: #fff;
+
+  span {
+    font-size: 30px;
+  }
+
+  b {
+    font-size: 24px;
+    font-weight: normal;
+  }
+}
+
+.price-notice {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+  color: $secondary;
+
+  sup {
+    position: relative;
+    font-size: 16px;
+    top: 5px;
+  }
+}
+
+.meta {
+  padding-bottom: 40px;
+  font-size: 15px;
+
+  li + li {
+    margin-top: 5px;
+  }
+
+  b {
+    font-weight: 700;
+    color: #4d4d4d;
+  }
+
+  span {
+    color: $grey;
+  }
+
+  a {
+    color: $secondary;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 </style>
