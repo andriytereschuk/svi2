@@ -95,6 +95,6 @@ export default {
 
 <style lang="scss">
 .top-props {
-  padding: 0 0 30px;
+  padding: 0 0 10px;
 }
 </style>

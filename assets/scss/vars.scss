@@ -8,10 +8,12 @@ $orange: #ee8e00;
 $orange-hover: #c67600;
 $red: #e01a2b;
 
-$small-screen: 600px;
+$xsmall-screen: 600px;
+$small-screen: 840px;
 $medium-screen: 1024px;
 $laptop-screen: 1280px;
 
+$xsmall: "only screen and (max-width: #{$xsmall-screen})";
+$small: "only screen and (max-width: #{$small-screen})";
 $medium: "only screen and (max-width: #{$medium-screen})";
 $laptop: "only screen and (max-width: #{$laptop-screen})";
-$small: "only screen and (max-width: #{$small-screen})";

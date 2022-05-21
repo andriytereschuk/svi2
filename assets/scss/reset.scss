@@ -40,6 +40,12 @@ html {
     margin: 0 auto;
     height: 100%;
   }
+
+  @media only screen and (max-width: 600px) {
+    .container {
+      padding: 0 10px;
+    }
+  }
   
   .row {
     display: flex;
@@ -88,6 +94,7 @@ html {
     font-weight: normal;
     color: #333;
     font-size: 22px;
+    line-height: 24px;
     padding-top: 30px;
     margin-bottom: 20px;
   }

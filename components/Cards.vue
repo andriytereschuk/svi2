@@ -18,19 +18,35 @@ export default {
 </script>
 
 <style lang="scss">
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: '. . . .';
-  column-gap: 10px;
-}
+@import '~/assets/scss/vars.scss';
 
-@media all and (-ms-high-contrast: none) {
-  .cards {
-    display: -ms-grid;
-    -ms-grid-columns: 1fr 1fr 1fr 1fr;
-    -ms-grid-rows: 1fr;
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: -10px;
+
+  @media #{$xsmall} {
+    margin-left: 0;
+  }
+
+  li {
+    flex-basis: 25%;
+    margin-bottom: 20px;
+    padding-left: 10px;
+
+    @media #{$medium} {
+      flex-basis: 33%;
+    }
+
+    @media #{$small} {
+      flex-basis: 50%;
+    }
+
+    @media #{$xsmall} {
+      flex-basis: 100%;
+      padding-left: 0;
+    }
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :class="{ active: isMenuOpened }">
     <div class="container">
       <nav class="row justify-between align-center">
         <nuxt-link to="/">
@@ -13,6 +13,9 @@
             }}</nuxt-link>
           </li>
         </ul>
+
+        <a class="mobile-menu" @click.prevent="openMenu">Меню сайту</a>
+        <a class="mobile-menu-close" @click.prevent="closeMenu">&#10005;</a>
       </nav>
     </div>
   </header>
@@ -22,8 +25,24 @@
 import { mapState } from 'vuex'
 
 export default {
+  data: () => ({
+    isMenuOpened: false,
+  }),
   computed: {
     ...mapState('nav', ['menu']),
+  },
+  watch: {
+    $route() {
+      this.isMenuOpened = false
+    },
+  },
+  methods: {
+    openMenu() {
+      this.isMenuOpened = true
+    },
+    closeMenu() {
+      this.isMenuOpened = false
+    },
   },
 }
 </script>
@@ -35,6 +54,57 @@ header {
   height: 50px;
   background-color: #fff;
   border-bottom: 1px solid silver;
+  position: relative;
+
+  &.active {
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    border: none;
+
+    .mobile-menu-close {
+      display: block;
+    }
+
+    nav {
+      height: 50px;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .menu {
+      position: absolute;
+      flex-direction: column;
+      padding-right: 0;
+      top: 50px;
+      left: 0;
+      right: 0;
+      bottom: 50px;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+
+      li + li {
+        margin-top: 25px;
+      }
+
+      li {
+        display: block;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 .logo {
@@ -87,75 +157,49 @@ header {
   }
 }
 
-// $navHeight: 66px;
+.mobile-menu {
+  position: absolute;
+  right: 2px;
+  padding: 10px;
+  display: none;
+}
 
-// .top {
-//   height: 60px;
-//   background-color: #fff;
-// }
+.mobile-menu-close {
+  position: absolute;
+  right: 10px;
+  display: none;
+  font-size: 22px;
+  padding: 10px;
+}
 
-// .logo {
-//   height: 38px;
-// }
+@media #{$small} {
+  .menu {
+    padding-right: 90px;
 
-// nav {
-//   background-color: $blue;
-//   height: $navHeight;
-//   overflow: hidden;
-// }
+    li {
+      display: none;
 
-// .menu {
-//   display: flex;
-// }
+      a {
+        padding: 10px;
 
-// .menu {
-//   li + li {
-//     margin-left: 20px;
-//   }
-// }
+        &::after {
+          bottom: -7px;
+        }
+      }
 
-// .menu-item {
-//   line-height: $navHeight;
-//   color: #fff;
-//   position: relative;
-//   display: inline-block;
+      &:first-child {
+        display: block;
+      }
+    }
 
-//   &:before {
-//     content: '';
-//     display: none;
-//     top: -1px;
-//     left: 50%;
-//     position: absolute;
-//     margin-left: -8.5px;
-//     width: 0;
-//     height: 0;
-//     border-left: 10px solid transparent;
-//     border-right: 10px solid transparent;
-//     border-top: 10px solid #fff;
-//   }
+    li + li {
+      margin: 0;
+    }
+  }
 
-//   &:hover {
-//     &:before {
-//       display: block;
-//     }
-//   }
-
-//   &.nuxt-link-active {
-//     pointer-events: none;
-
-//     &:after {
-//       content: '';
-//       display: block;
-//       bottom: -1px;
-//       left: 50%;
-//       position: absolute;
-//       margin-left: -8.5px;
-//       width: 0;
-//       height: 0;
-//       border-left: 10px solid transparent;
-//       border-right: 10px solid transparent;
-//       border-bottom: 10px solid #eee;
-//     }
-//   }
-// }
+  .mobile-menu {
+    display: block;
+    font-size: 13px;
+  }
+}
 </style>
