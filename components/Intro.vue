@@ -72,17 +72,17 @@
     </div>
 
     <client-only>
-      <vue-easy-lightbox
+      <Gallery
         :visible="isGalleryOpened"
-        :imgs="slides"
-        move-disabled
+        :images="slides"
         @hide="closeGallery"
-      ></vue-easy-lightbox>
+      ></Gallery>
     </client-only>
   </section>
 </template>
 
 <script>
+import Gallery from './Gallery.vue'
 const servicesMap = {
   'Free Wifi': 'wifi',
   Альтанки: 'pergola',
@@ -93,6 +93,7 @@ const servicesMap = {
 }
 
 export default {
+  components: { Gallery },
   props: {
     data: {
       type: Object,

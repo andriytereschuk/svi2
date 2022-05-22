@@ -21,9 +21,9 @@
   "dependencies": {
     "axios": "^0.26.1",
     "core-js": "^3.9.1",
+    "lightgallery": "^2.4.0",
     "nuxt": "^2.15.3",
     "storyblok-nuxt": "^2.0.1",
-    "vue-easy-lightbox": "^0.17.0",
     "vue-gtag": "^1.16.1"
   },
   "devDependencies": {
