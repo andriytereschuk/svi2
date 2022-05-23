@@ -9,9 +9,7 @@ export const actions = {
       starts_with: 'rooms',
       version,
     })
-    const items = response.data.stories.map(
-      ({ content: { items } }) => items[0]
-    )
+    const items = response.data.stories[0].content.items
 
     commit('setRooms', items)
   },
