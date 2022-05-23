@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Intro v-if="id" :data="content" :is-services="!id"></Intro>
+    <Intro v-if="id" :data="content"></Intro>
   </div>
 </template>
 

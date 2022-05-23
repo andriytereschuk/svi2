@@ -1,11 +1,14 @@
 <template>
-  <div>
-    <a v-for="(item, index) in items" :key="index" :data-src="item.src"></a>
+  <div class="gallery">
+    <a v-for="(item, index) in items" :key="index" :data-src="item.src">
+      <img :src="item.thumb" />
+    </a>
   </div>
 </template>
 
 <script>
 import lightGallery from 'lightgallery'
+import lgThumbnail from 'lightgallery/plugins/thumbnail'
 import { isDev } from '@/helpers/isDev'
 let instance
 
@@ -20,9 +23,7 @@ export default {
       default: true,
     },
   },
-  data: () => ({
-    plugins: [],
-  }),
+  data: () => ({}),
   computed: {
     settings() {
       return {
@@ -33,6 +34,7 @@ export default {
     items() {
       return this.images.map((image) => ({
         src: image,
+        thumb: `${image}/m/0x140`,
       }))
     },
   },
@@ -45,8 +47,12 @@ export default {
   },
   mounted() {
     instance = lightGallery(this.$el, {
-      plugins: [],
+      plugins: [lgThumbnail],
       speed: 500,
+      thumbHeight: '140px',
+      thumbWidth: '187px',
+      thumbMargin: 15,
+      download: false,
     })
 
     this.$el.addEventListener('lgBeforeClose', () => {
@@ -70,4 +76,11 @@ export default {
 
 <style lang="scss">
 @import 'lightgallery/css/lightgallery.css';
+@import 'lightgallery/css/lg-thumbnail.css';
+
+.gallery {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
 </style>
