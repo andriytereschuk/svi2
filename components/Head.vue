@@ -93,7 +93,7 @@ header {
       }
 
       li + li {
-        margin-top: 25px;
+        margin-top: 30px;
       }
 
       li {

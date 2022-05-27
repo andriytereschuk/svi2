@@ -9,13 +9,22 @@
       </label>
 
       <label>
-        <nuxt-link to="rooms">Кімнати</nuxt-link>
         <input v-model="filter" type="radio" value="rooms" />
         <span>Кімнати</span>
       </label>
     </section>
 
-    <Cards :cards="cards" />
+    <div class="categories" :class="{ 'rooms-first': isRoomsFirst }">
+      <section id="homes">
+        <h2>Будинки</h2>
+        <Cards :cards="homesCards" />
+      </section>
+
+      <section id="rooms">
+        <h2>Кімнати по категоріям</h2>
+        <Cards :cards="roomsCards" />
+      </section>
+    </div>
   </div>
 </template>
 
@@ -28,6 +37,12 @@ export default {
   }),
   fetch({ store, app }) {
     return Promise.all([
+      store.state.categories.categories.length
+        ? Promise.resolve()
+        : store.dispatch('categories/fetchCategories', app),
+      store.state.rooms.rooms.length
+        ? Promise.resolve()
+        : store.dispatch('rooms/fetchRooms', app),
       store.state.homes.homes.length
         ? Promise.resolve()
         : store.dispatch('homes/fetchHomes', app),
@@ -56,7 +71,12 @@ export default {
   },
   computed: {
     ...mapState('homes', ['homes']),
-    cards() {
+    ...mapState('categories', ['categories']),
+    ...mapState('rooms', ['rooms']),
+    isRoomsFirst() {
+      return this.filter === 'rooms'
+    },
+    homesCards() {
       return this.homes.map(({ name, content }) => ({
         link: {
           name: 'homes-home',
@@ -69,8 +89,49 @@ export default {
         image: content.mainImage.filename,
       }))
     },
+    minPrices() {
+      return this.rooms.reduce((acc, { category, price }) => {
+        const link = category.cached_url.split('/')[1]
+
+        if (acc[link]) {
+          acc[link] = Math.min(acc[link], price)
+        } else {
+          acc[link] = price
+        }
+
+        return acc
+      }, {})
+    },
+    roomsCards() {
+      return this.categories.map(({ name: category, content }) => ({
+        link: {
+          name: 'categories-category',
+          params: {
+            category,
+          },
+        },
+        title: content.name,
+        image: content.image.filename,
+        price: this.minPrices[category]
+          ? `від ${this.minPrices[category]} грн`
+          : '',
+      }))
+    },
   },
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.categories {
+  display: flex;
+  flex-direction: column;
+}
+
+.rooms-first {
+  flex-direction: column-reverse;
+}
+
+section {
+  margin-bottom: 30px;
+}
+</style>

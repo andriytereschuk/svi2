@@ -68,6 +68,23 @@ export default {
     if (store.state.gallery.slides.length) return
     return await store.dispatch('gallery/get', app)
   },
+  head: {
+    title:
+      'SVILAKE - озеро Світязь. Літній відпочинок, житло, проживання в приватному секторі на Шацьких озерах. Свілейк.',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Прекрасний літній відпочинок - запорука здорового, енергійного робочого року. А можливий гарний відпочинок на озері Світязь - Svilake. Шацькі озера – благодатний куточок України, який природа щедро наділила блакитними плесами озер, річок, ошатними лісами.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'свілейк,світязь,свитязь,озеро,літній,шацьк,шацк,житло,проживання',
+      },
+    ],
+  },
   computed: {
     ...mapState('gallery', ['slides']),
     content() {

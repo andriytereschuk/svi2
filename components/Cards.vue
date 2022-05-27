@@ -22,7 +22,6 @@ export default {
 
 .cards {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   margin-left: -10px;
 

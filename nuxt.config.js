@@ -12,8 +12,22 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
+      { name: 'robots', content: 'all' },
+      { name: 'author', content: 'Андрій Терещук' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
+      {
+        property: 'og:site_name',
+        content: 'SVILAKE',
+      },
+      {
+        property: 'og:url',
+        content: 'https://svilake.com',
+      },
+      {
+        property: 'og:image',
+        content: 'https://svilake.com/content/common/main.jpg',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
