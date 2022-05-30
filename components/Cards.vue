@@ -1,5 +1,5 @@
 <template>
-  <ul class="cards">
+  <ul class="cards" :class="{ 'cards-vertical': isVertical }">
     <li v-for="(card, index) of cards" :key="index">
       <Card :card="card"></Card>
     </li>
@@ -13,6 +13,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    isVertical: {
+      type: Boolean,
+      default: false,
+    },
   },
 }
 </script>
@@ -24,6 +28,18 @@ export default {
   display: flex;
   flex-wrap: wrap;
   margin-left: -10px;
+
+  &.cards-vertical {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 0;
+
+    li {
+      flex-basis: 100%;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+  }
 
   @media #{$xsmall} {
     margin-left: 0;

@@ -7,7 +7,7 @@
         <div v-if="card.info" class="card-info">{{ card.info }}</div>
       </div>
       <div>
-        <div class="card-price">{{ card.price }}</div>
+        <div v-if="card.price" class="card-price">{{ card.price }}</div>
       </div>
     </div>
   </nuxt-link>
@@ -47,7 +47,7 @@ export default {
 
   &-desc {
     height: 60px;
-    padding: 0 15px;
+    padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -74,6 +74,9 @@ export default {
   &-price {
     font-weight: bold;
     font-size: 13px;
+    color: #fff;
+    padding: 2px 5px;
+    background-color: $red;
   }
 }
 </style>

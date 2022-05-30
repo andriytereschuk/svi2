@@ -25,12 +25,6 @@ export default {
   },
   data: () => ({}),
   computed: {
-    settings() {
-      return {
-        speed: 500,
-        plugins: this.plugins,
-      }
-    },
     items() {
       return this.images.map((image) => ({
         src: image,
@@ -49,9 +43,6 @@ export default {
     instance = lightGallery(this.$el, {
       plugins: [lgThumbnail],
       speed: 500,
-      thumbHeight: '140px',
-      thumbWidth: '187px',
-      thumbMargin: 15,
       download: false,
     })
 
@@ -75,12 +66,39 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~/assets/scss/vars.scss';
 @import 'lightgallery/css/lightgallery.css';
 @import 'lightgallery/css/lg-thumbnail.css';
+
+$defaultColor: #d9d9d9;
 
 .gallery {
   position: absolute;
   width: 0;
   height: 0;
+}
+
+.lg-counter {
+  color: $defaultColor;
+  font-size: 20px;
+}
+
+.lg-toolbar .lg-icon {
+  color: $defaultColor;
+  font-size: 32px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.lg-next,
+.lg-prev {
+  color: $defaultColor;
+  font-size: 34px;
+}
+
+.lg-outer .lg-thumb-item.active,
+.lg-outer .lg-thumb-item:hover {
+  border-color: $primary;
 }
 </style>
