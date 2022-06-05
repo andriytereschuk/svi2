@@ -3,7 +3,7 @@
     <div class="intro-img" :style="mainImage">
       <button
         v-if="slides.length > 1"
-        class="btn btn--primary"
+        class="btn-gallery btn btn--primary"
         @click="openGallery"
       >
         <i class="icon icon-expand"></i>
@@ -61,11 +61,39 @@
 
         <ul class="quick-contacts">
           <li>
-            <i class="icon icon-phone-call"></i> <span>+380976541951</span>
+            <div class="contact">
+              <i class="icon icon-phone-call"></i>
+              <span>{{ phoneNumber }}</span>
+            </div>
+
+            <div>
+              <textarea
+                ref="areaNumber"
+                class="area-number"
+                :value="phoneNumber"
+              ></textarea>
+              <a href="tel:+380976541951" class="btn-call btn-contact"
+                >Телефонувати</a
+              >
+              <a href="#" class="btn-contact" @click="copy">Копіювати номер</a>
+              <a
+                href="viber://chat/?number=%2B380976541951"
+                class="btn-contact"
+                title="Відкрити в додатку. Для цього він має бути встановлений на вашому пристрою"
+                >Viber</a
+              >
+            </div>
           </li>
           <li>
-            <i class="icon icon-pin"></i>
-            <span>с. Світязь, вул. Набережна 45</span>
+            <div class="contact">
+              <i class="icon icon-pin"></i>
+              <span>с. Світязь, вул. Набережна 45</span>
+            </div>
+            <div>
+              <a :href="mapAddress" target="_blank" class="btn-contact"
+                >Відкрити в Google Maps</a
+              >
+            </div>
           </li>
         </ul>
       </div>
@@ -83,6 +111,7 @@
 
 <script>
 import Gallery from './Gallery.vue'
+
 const servicesMap = {
   'Free Wifi': 'wifi',
   Альтанки: 'pergola',
@@ -91,6 +120,9 @@ const servicesMap = {
   Батут: 'trampoline',
   Parking: 'park',
 }
+
+const successCopyCb = () => alert('Номер скопійовано!')
+const errorCopyCb = () => alert('Копіювання не підтримується вашим браузером')
 
 export default {
   components: { Gallery },
@@ -112,6 +144,9 @@ export default {
   data() {
     return {
       isGalleryOpened: false,
+      phoneNumber: '+380976541951',
+      mapAddress:
+        'https://www.google.com.ua/maps/place/%D0%9C%D0%B0%D1%94%D1%82%D0%BE%D0%BA+Svilake/@51.4894711,23.8583094,14.51z/data=!4m5!3m4!1s0x4723e527dfc32f49:0x2f7244ecb5f1ef51!8m2!3d51.4859754!4d23.8633091?hl=uk',
     }
   },
   computed: {
@@ -140,6 +175,29 @@ export default {
       const icon = servicesMap[name]
 
       return `icon-${icon}`
+    },
+    copy(event) {
+      event.preventDefault()
+
+      if (!navigator.clipboard) {
+        this.fallbackCopy()
+        return
+      }
+      navigator.clipboard
+        .writeText(this.phoneNumber)
+        .then(successCopyCb, errorCopyCb)
+    },
+    fallbackCopy() {
+      this.$refs.areaNumber.focus()
+      this.$refs.areaNumber.select()
+      let isCopied = false
+      try {
+        isCopied = document.execCommand('copy')
+      } catch (e) {
+        isCopied = false
+      }
+      this.$refs.areaNumber.blur()
+      return isCopied ? successCopyCb() : errorCopyCb()
     },
   },
 }
@@ -221,7 +279,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-button {
+.btn-gallery {
   position: absolute;
   right: 8px;
   bottom: 8px;
@@ -320,11 +378,61 @@ button {
 
   li {
     display: flex;
+    flex: 1;
     align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
   }
 
   li + li {
-    margin-left: 30px;
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 1px solid silver;
+  }
+
+  @media #{$small} {
+    flex-direction: column;
+
+    li + li {
+      margin-left: 0;
+      padding-left: 0;
+      border-left: none;
+    }
+  }
+}
+
+.contact {
+  display: flex;
+  white-space: nowrap;
+}
+
+.btn-contact {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 12px;
+  line-height: 14px;
+  border: 1px solid #9a9a9a;
+  border-radius: 2px;
+  background-color: #efefef;
+  font-family: Arial;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e9e9e9;
+    border: 1px solid #808080;
+  }
+}
+
+.btn-contact + .btn-contact {
+  margin-left: 5px;
+}
+
+.btn-call {
+  display: none;
+
+  @media #{$small} {
+    display: inline-block;
   }
 }
 
@@ -398,6 +506,24 @@ button {
 @media #{$small} {
   .pt-40 {
     padding-top: 0;
+  }
+}
+
+.area-number {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+@media only screen and (max-width: 1490px) {
+  .quick-contacts {
+    li {
+      flex-direction: column;
+
+      .contact {
+        margin-bottom: 10px;
+      }
+    }
   }
 }
 </style>
