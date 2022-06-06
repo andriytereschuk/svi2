@@ -35,7 +35,7 @@ export default {
           title: 'Котедж',
           info: 'Будинок на 8-10 чол',
           image: '/content/homes/4/1.jpg',
-          price: '3000 грн/доба',
+          price: '2750 грн/доба',
           link: '/homes/cottage',
         },
         {

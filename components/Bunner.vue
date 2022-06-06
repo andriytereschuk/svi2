@@ -15,7 +15,7 @@ export default {
           info: 'Будинок на 8-10 чол',
           image:
             'https://a.storyblok.com/f/153450/1000x750/e0cf0ed31c/cottage-general_1_1.jpg',
-          price: '3000 грн/доба',
+          price: '2750 грн/доба',
           link: '/homes/cottage',
         },
         {
