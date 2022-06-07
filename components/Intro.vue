@@ -17,7 +17,10 @@
           Маєток <strong>SVILAKE</strong> - проживання на Світязі в приватному
           секторі
         </h1>
-        <h1 v-else-if="data.title">{{ data.title }}</h1>
+        <h1 v-else-if="data.title">
+          {{ data.title }}
+          <nuxt-link to="/booking" class="book">Забронювати</nuxt-link>
+        </h1>
 
         <div v-if="data.price" class="price-big">
           <div class="price-value">
@@ -270,6 +273,34 @@ export default {
 h1 {
   margin-bottom: 32px;
   font-size: 18px;
+  position: relative;
+}
+
+.book {
+  display: inline-block;
+  background-color: #42a446;
+  color: #fff;
+  padding: 8px;
+  border-radius: 15px;
+  margin-left: 20px;
+  font-size: 13px;
+  line-height: 13px;
+  position: relative;
+  top: -2px;
+
+  &:hover {
+    background-color: #087f23;
+  }
+
+  @media #{$small} {
+    position: absolute;
+    left: -25px;
+    bottom: 40px;
+    top: auto;
+    font-size: 12px;
+    padding: 10px 8px;
+    text-transform: uppercase;
+  }
 }
 
 .subtitle {

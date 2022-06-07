@@ -1,5 +1,6 @@
 <template>
   <nuxt-link :to="card.link" class="card">
+    <div class="card-goto">перейти</div>
     <div class="card-img" :style="style"></div>
     <div class="card-desc">
       <div>
@@ -39,10 +40,33 @@ export default {
   background-color: #fff;
   box-shadow: 0 7px 12px -4px rgb(0 0 0 / 15%);
   transition: ease-in 0.2s;
+  position: relative;
 
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 2px 10px 2px rgb(0 0 0 / 25%);
+  }
+
+  &-goto {
+    position: absolute;
+    top: 9px;
+    right: 8px;
+    background-color: #fff;
+    color: #000;
+    padding: 4px 6px 2px 6px;
+    font-size: 10px;
+    line-height: 10px;
+    border-radius: 4px;
+    z-index: 2;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    box-shadow: 0 1px 3px 0px rgb(0 0 0 / 25%);
+    display: none;
+
+    @media #{$small} {
+      display: block;
+    }
   }
 
   &-desc {

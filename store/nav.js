@@ -12,10 +12,10 @@ const initialState = {
     //   name: 'Про нас',
     //   href: '/about-svilake',
     // },
-    // {
-    //   name: 'Бронювання',
-    //   href: '/booking',
-    // },
+    {
+      name: 'Бронювання',
+      href: '/booking',
+    },
     {
       name: 'Як добратись',
       href: '/routes',

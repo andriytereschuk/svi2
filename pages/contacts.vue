@@ -26,7 +26,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head: {
+    title: 'SVILAKE - контакти і зворотній звязок',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Наша адреса і місцезнаходження',
+      },
+    ],
+  },
+}
 </script>
 
 <style lang="scss" scoped>
