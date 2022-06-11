@@ -19,6 +19,18 @@ export default {
         : store.dispatch('rooms/fetchRooms', app),
     ])
   },
+  head() {
+    return {
+      title: this.content.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: '',
+        },
+      ],
+    }
+  },
   computed: {
     ...mapState('homes', ['homes']),
     ...mapState('rooms', ['rooms']),
@@ -42,6 +54,9 @@ export default {
         slides,
         services,
         description,
+        meta: {
+          visible: false,
+        },
       }
     },
     filteredRooms() {

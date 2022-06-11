@@ -93,6 +93,9 @@ export default {
         image: 'https://a.storyblok.com/f/153450/580x392/f3bfab5bd5/main.jpg',
         slides: this.slides,
         services: [],
+        meta: {
+          visible: false,
+        },
       }
     },
     images() {

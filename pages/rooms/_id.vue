@@ -18,6 +18,21 @@ export default {
         : store.dispatch('rooms/fetchRooms', app),
     ])
   },
+  head() {
+    const title =
+      this.content.title + ' / Будинок ' + this.content?.meta?.home?.name
+
+    return {
+      title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: '',
+        },
+      ],
+    }
+  },
   computed: {
     ...mapState('categories', ['categories']),
     ...mapState('rooms', ['rooms']),
@@ -40,9 +55,10 @@ export default {
         title,
         slides,
         image: slides[0]?.image?.filename,
-        price,
+        price: +price,
         description,
         meta: {
+          visible: true,
           type,
           home: {
             link: `/${home.cached_url}`,

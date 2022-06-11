@@ -19,7 +19,9 @@
         </h1>
         <h1 v-else-if="data.title">
           {{ data.title }}
-          <nuxt-link to="/booking" class="book">Забронювати</nuxt-link>
+          <nuxt-link to="/booking" class="book" @click="track('sv_booking')"
+            >Забронювати</nuxt-link
+          >
         </h1>
 
         <div v-if="data.price" class="price-big">
@@ -29,7 +31,7 @@
           <div class="price-notice"><sup>*</sup> за номер</div>
         </div>
 
-        <ul v-if="data.meta" class="meta">
+        <ul v-if="data.meta.visible" class="meta">
           <li>
             <b>Категорія:</b>
             <nuxt-link :to="data.meta.category.link">{{
@@ -75,7 +77,10 @@
                 class="area-number"
                 :value="phoneNumber"
               ></textarea>
-              <a href="tel:+380976541951" class="btn-call btn-contact"
+              <a
+                href="tel:+380976541951"
+                class="btn-call btn-contact"
+                @click="track('sv_phone_call')"
                 >Телефонувати</a
               >
               <a href="#" class="btn-contact" @click="copy">Копіювати номер</a>
@@ -83,6 +88,7 @@
                 href="viber://chat/?number=%2B380976541951"
                 class="btn-contact"
                 title="Відкрити в додатку. Для цього він має бути встановлений на вашому пристрою"
+                @click="track('sv_open_viber')"
                 >Viber</a
               >
             </div>
@@ -93,7 +99,11 @@
               <span>с. Світязь, вул. Набережна 45</span>
             </div>
             <div>
-              <a :href="mapAddress" target="_blank" class="btn-contact"
+              <a
+                :href="mapAddress"
+                target="_blank"
+                class="btn-contact"
+                @click="track('sv_open_gmap')"
                 >Відкрити в Google Maps</a
               >
             </div>
@@ -166,9 +176,20 @@ export default {
         ? this.data.services
         : Object.keys(servicesMap)
     },
+    analyticsContext() {
+      if (!this.data.meta.visible) return null
+
+      return {
+        sv_category: this.data.meta.category?.name,
+        sv_home: this.data.meta.home?.name,
+        sv_type: this.data.meta.type,
+        sv_price: this.data.price,
+      }
+    },
   },
   methods: {
     openGallery() {
+      this.track('sv_open_photos')
       this.isGalleryOpened = true
     },
     closeGallery() {
@@ -181,6 +202,8 @@ export default {
     },
     copy(event) {
       event.preventDefault()
+
+      this.track('sv_copy_phone_number')
 
       if (!navigator.clipboard) {
         this.fallbackCopy()
@@ -201,6 +224,11 @@ export default {
       }
       this.$refs.areaNumber.blur()
       return isCopied ? successCopyCb() : errorCopyCb()
+    },
+    track(eventName) {
+      return this.analyticsContext
+        ? this.$gtag.event(eventName, this.analyticsContext)
+        : this.$gtag.event(eventName)
     },
   },
 }

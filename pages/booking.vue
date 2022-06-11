@@ -20,7 +20,10 @@
             <div class="number">{{ phoneNumber }}</div>
 
             <div>
-              <a href="tel:+380976541951" class="btn-call btn-contact"
+              <a
+                href="tel:+380976541951"
+                class="btn-call btn-contact"
+                @click="track('sv_phone_call')"
                 >Телефонувати</a
               >
               <a href="#" class="btn-contact" @click="copy">Копіювати номер</a>
@@ -28,6 +31,7 @@
                 href="viber://chat/?number=%2B380976541951"
                 class="btn-contact"
                 title="Відкрити в додатку. Для цього він має бути встановлений на вашому пристрою"
+                @click="track('sv_open_viber')"
                 >Viber</a
               >
               <textarea
@@ -83,6 +87,7 @@
                 href="viber://chat/?number=%2B380976541951"
                 class="btn-contact"
                 title="Відкрити в додатку. Для цього він має бути встановлений на вашому пристрою"
+                @click="track('sv_send_confirmation_in_viber')"
                 >Відкрити Viber</a
               >
             </div>
@@ -123,6 +128,8 @@ export default {
     copy(event) {
       event.preventDefault()
 
+      this.track('sv_copy_phone_number')
+
       if (!navigator.clipboard) {
         this.fallbackCopy()
         return
@@ -146,6 +153,8 @@ export default {
     copyCardNumber(event) {
       event.preventDefault()
 
+      this.track('sv_copy_card_number')
+
       if (!navigator.clipboard) {
         this.fallbackCopyCard()
         return
@@ -165,6 +174,9 @@ export default {
       }
       this.$refs.cardRef.blur()
       return isCopied ? successCopyCb() : errorCopyCb()
+    },
+    track(eventName) {
+      this.$gtag.event(eventName)
     },
   },
 }
