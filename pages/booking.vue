@@ -249,7 +249,9 @@ li {
 
 .btn-contact {
   display: inline-block;
-  padding: 3px 5px;
+  position: relative;
+  top: -1px;
+  padding: 4px 6px;
   font-size: 12px;
   line-height: 14px;
   border: 1px solid #9a9a9a;

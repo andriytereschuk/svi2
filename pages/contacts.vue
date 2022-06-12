@@ -1,27 +1,12 @@
 <template>
-  <div class="container">
-    <br />
-    <h1>Контакти</h1>
-    <br />
+  <div class="container contacts-page">
+    <Intro :data="content" :is-services="false"></Intro>
 
-    <ul>
-      <li>
-        <b>Адреса:</b> Волинська обл, Шацький р-н, с. Світязь, вул. Набережна,
-        45
-      </li>
-      <li><b>Телефони:</b> <a href="tel:+380976541951">0976541951</a></li>
-      <li>
-        <b>Viber:</b>
-        <a href="viber://chat/?number=%2B380976541951"
-          >Розпочати чат (+380976541951)</a
-        >
-      </li>
-    </ul>
-    <br />
+    <section class="box">
+      <h1>Схема доїзду</h1>
 
-    <h2>Схема доїзду</h2>
-    <br />
-    <img src="content/common/map.jpg" alt="" />
+      <img src="content/common/map.jpg" alt="" />
+    </section>
   </div>
 </template>
 
@@ -37,16 +22,30 @@ export default {
       },
     ],
   },
+  computed: {
+    content() {
+      return {
+        title: 'Контакти',
+        slides: [],
+        services: [],
+        meta: {
+          visible: false,
+        },
+      }
+    },
+  },
 }
 </script>
 
-<style lang="scss" scoped>
-a {
-  text-decoration: underline;
-}
+<style lang="scss">
+.contacts-page {
+  .intro-img,
+  .book {
+    display: none !important;
+  }
 
-img {
-  width: 100%;
-  max-width: 800px;
+  .intro-info {
+    min-height: auto !important;
+  }
 }
 </style>

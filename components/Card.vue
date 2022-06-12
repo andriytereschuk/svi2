@@ -49,11 +49,11 @@ export default {
 
   &-goto {
     position: absolute;
-    top: 9px;
-    right: 8px;
+    bottom: 75px;
+    right: 14px;
     background-color: #fff;
     color: #000;
-    padding: 4px 6px 2px 6px;
+    padding: 7px 6px 5px 6px;
     font-size: 10px;
     line-height: 10px;
     border-radius: 4px;

@@ -7,7 +7,7 @@
         @click="openGallery"
       >
         <i class="icon icon-expand"></i>
-        <span>фото галерея</span>
+        <span>більше фото</span>
       </button>
     </div>
 
@@ -252,6 +252,7 @@ export default {
   @media #{$small} {
     flex-direction: column;
     margin-top: 1px;
+    position: relative;
   }
 
   &-img {
@@ -285,6 +286,7 @@ export default {
 
     @media #{$small} {
       min-height: auto;
+      position: static;
     }
   }
 
@@ -315,18 +317,26 @@ h1 {
   line-height: 13px;
   position: relative;
   top: -2px;
+  z-index: 2;
 
   &:hover {
     background-color: #087f23;
   }
 
+  @media #{$medium} {
+    position: absolute;
+    right: -10px;
+    top: 80px;
+  }
+
   @media #{$small} {
     position: absolute;
-    left: -25px;
+    left: -27px;
+    right: auto;
     bottom: 40px;
     top: auto;
-    font-size: 12px;
-    padding: 10px 8px;
+    font-size: 11px;
+    padding: 8px 10px;
     text-transform: uppercase;
   }
 }
@@ -342,17 +352,23 @@ h1 {
   position: absolute;
   right: 8px;
   bottom: 8px;
+  z-index: 2;
 
   @media #{$medium} {
     top: 8px;
     bottom: auto;
-    padding: 10px;
+    padding: 8px;
+  }
+
+  @media #{$small} {
+    top: auto;
+    bottom: -15px;
+    right: 13px;
+    padding: 7px 12px;
+    border-radius: 15px;
+    font-size: 11px;
 
     i {
-      margin-right: 0;
-    }
-
-    span {
       display: none;
     }
   }
@@ -366,6 +382,10 @@ h1 {
 
   @media #{$small} {
     flex-wrap: wrap;
+
+    li {
+      min-width: 70px;
+    }
   }
 
   li {
@@ -440,7 +460,7 @@ h1 {
     flex: 1;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 5px 0;
   }
 
   li + li {
@@ -467,7 +487,7 @@ h1 {
 
 .btn-contact {
   display: inline-block;
-  padding: 3px 5px;
+  padding: 5px;
   font-size: 12px;
   line-height: 14px;
   border: 1px solid #9a9a9a;
@@ -476,6 +496,10 @@ h1 {
   font-family: Arial;
   white-space: nowrap;
   cursor: pointer;
+
+  @media #{$small} {
+    padding: 6px 8px;
+  }
 
   &:hover {
     background-color: #e9e9e9;
@@ -517,6 +541,28 @@ h1 {
     font-size: 24px;
     font-weight: normal;
   }
+
+  @media #{$medium} {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+  }
+
+  @media #{$small} {
+    display: inline-block;
+    padding: 0 12px;
+    height: 36px;
+    line-height: 35px;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+
+    span {
+      font-size: 20px;
+    }
+
+    b {
+      font-size: 18px;
+    }
+  }
 }
 
 .price-notice {
@@ -532,6 +578,10 @@ h1 {
     position: relative;
     font-size: 16px;
     top: 5px;
+  }
+
+  @media #{$small} {
+    display: none;
   }
 }
 
@@ -582,6 +632,14 @@ h1 {
       .contact {
         margin-bottom: 10px;
       }
+    }
+  }
+}
+
+@media #{$small} {
+  .quick-contacts {
+    li + li {
+      margin-top: 30px;
     }
   }
 }

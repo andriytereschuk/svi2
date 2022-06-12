@@ -43,7 +43,7 @@ export default {
         : null
     },
     content() {
-      if (!this.home.content) return {}
+      if (!this.home?.content) return {}
 
       const { mainImage, slides, title, services, description } =
         this.home.content
