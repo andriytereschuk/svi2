@@ -20,7 +20,7 @@
         <h1 v-else-if="data.title">
           {{ data.title }}
           <nuxt-link to="/booking" class="book" @click="track('sv_booking')"
-            >Забронювати</nuxt-link
+            >Як забронювати?</nuxt-link
           >
         </h1>
 

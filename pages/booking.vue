@@ -94,7 +94,7 @@
 
             <div class="confirm-section">
               Отримавши оплату житло буде гарантовано надане на визначену дату.
-              <b>Час заселення:</b> після 12:00
+              <b>Час заселення:</b> після 14:00. <b>Виселення:</b> до 12:00.
             </div>
           </div>
         </div>
@@ -326,12 +326,13 @@ section h1 {
   padding: 20px 0 0 0;
   line-height: 18px;
   color: $grey;
-  font-size: 12px;
-  border-bottom: 1px solid $light;
-  letter-spacing: 0.04em;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 
   @media #{$xsmall} {
     font-size: 13px;
+    text-align: center;
   }
 }
 
