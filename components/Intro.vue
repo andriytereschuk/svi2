@@ -1,6 +1,6 @@
 <template>
   <section class="intro">
-    <div class="intro-img" :style="mainImage">
+    <div v-if="data.image" class="intro-img" :style="mainImage">
       <button
         v-if="slides.length > 1"
         class="btn-gallery btn btn--primary"
@@ -114,6 +114,7 @@
 
     <client-only>
       <Gallery
+        v-if="slides.length"
         :visible="isGalleryOpened"
         :images="slides"
         @hide="closeGallery"
