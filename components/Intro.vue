@@ -7,7 +7,7 @@
         @click="openGallery"
       >
         <i class="icon icon-expand"></i>
-        <span>більше фото</span>
+        <span>всі фото</span>
       </button>
     </div>
 

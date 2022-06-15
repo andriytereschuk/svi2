@@ -41,7 +41,11 @@
           з пасками безпеки і кондиціонером.
         </p>
 
-        <p>Час в дорозі: <b>3:30 год</b></p>
+        <ul class="b-time">
+          <li><b>7:00</b> Львів - Шацьк</li>
+          <li><b>16:00</b> Шацьк - Львів</li>
+          <li>Час в дорозі: <b>3:30 год</b></li>
+        </ul>
 
         <h2>Ціни зі Львова</h2>
 
@@ -118,6 +122,13 @@ export default {
         property: 'og:image',
         content:
           'https://a.storyblok.com/f/153450/1000x750/6b23fd1745/bus-front.jpg',
+      },
+    ],
+    link: [
+      {
+        hid: 'canonical',
+        rel: 'canonical',
+        href: 'https://www.svilake.com/bus-ekspres-lviv-shatski-ozera',
       },
     ],
   },
@@ -256,6 +267,10 @@ export default {
 .b-call-number {
   font-weight: bold;
   letter-spacing: 0.03em;
+
+  @media #{$small} {
+    display: block;
+  }
 }
 
 .b-contact-btn {
@@ -280,6 +295,25 @@ export default {
   &:hover {
     background-color: #bebebe;
     border: 1px solid #808080;
+  }
+}
+
+.b-time {
+  display: flex;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 25px;
+
+  li + li {
+    margin-left: 100px;
+  }
+
+  @media #{$small} {
+    flex-direction: column;
+
+    li + li {
+      margin-left: 0;
+    }
   }
 }
 

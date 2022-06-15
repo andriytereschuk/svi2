@@ -86,6 +86,25 @@ export default {
         content:
           'свілейк,світязь,свитязь,озеро,літній,шацьк,шацк,житло,проживання',
       },
+      {
+        property: 'og:site_name',
+        content: 'SVILAKE',
+      },
+      {
+        property: 'og:url',
+        content: 'https://svilake.com',
+      },
+      {
+        property: 'og:image',
+        content: 'https://svilake.com/content/common/main.jpg',
+      },
+    ],
+    link: [
+      {
+        hid: 'canonical',
+        rel: 'canonical',
+        href: 'https://www.svilake.com',
+      },
     ],
   },
   computed: {

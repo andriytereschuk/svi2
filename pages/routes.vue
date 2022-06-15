@@ -56,8 +56,24 @@ export default {
           'маршрутки, автобуси, експреси, світязя, гряди, шацька, пансіоната',
       },
       {
+        property: 'og:site_name',
+        content: 'Як добратись до Світязя і Шацька',
+      },
+      {
         property: 'og:url',
         content: 'http://svilake.com/routes',
+      },
+      {
+        property: 'og:image',
+        content:
+          'https://a.storyblok.com/f/153450/1000x706/6b59f8148e/bus-front-left.jpg',
+      },
+    ],
+    link: [
+      {
+        hid: 'canonical',
+        rel: 'canonical',
+        href: 'https://www.svilake.com/routes',
       },
     ],
   },

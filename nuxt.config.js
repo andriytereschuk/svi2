@@ -16,27 +16,8 @@ export default {
       { name: 'author', content: 'Андрій Терещук' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      {
-        property: 'og:site_name',
-        content: 'SVILAKE',
-      },
-      {
-        property: 'og:url',
-        content: 'https://svilake.com',
-      },
-      {
-        property: 'og:image',
-        content: 'https://svilake.com/content/common/main.jpg',
-      },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      // {
-      //   rel: 'stylesheet',
-      //   href:
-      //     'https://fonts.googleapis.com/css2?family=Roboto:400,300&subset=latin,cyrillic',
-      // },
-    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
