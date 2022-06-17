@@ -619,12 +619,6 @@ h1 {
   }
 }
 
-.area-number {
-  width: 0;
-  height: 0;
-  opacity: 0;
-}
-
 @media only screen and (max-width: 1490px) {
   .quick-contacts {
     li {

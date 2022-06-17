@@ -14,6 +14,11 @@
           <a href="#" class="b-contact-btn" @click="copy"
             >Копіювати номер диспетчера</a
           >
+          <textarea
+            ref="areaNumber"
+            class="area-number"
+            :value="phoneNumber"
+          ></textarea>
           <div class="b-main-img">
             <img
               src="https://a.storyblok.com/f/153450/1000x750/c3b61e002b/bus-front-aside.jpg"
