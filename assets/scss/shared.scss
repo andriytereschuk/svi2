@@ -8,6 +8,19 @@
   padding-bottom: 40px;
 }
 
+.text-small {
+  font-size: 15px !important;
+  line-height: 18px !important;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
 // specific
 .filter {
   margin-bottom: 30px;
@@ -45,6 +58,12 @@
   h1 {
     margin-bottom: 20px;
     font-size: 18px;
+  }
+
+  h2 {
+    padding: 20px 0 10px;
+    text-align: center;
+
   }
 
   p {
