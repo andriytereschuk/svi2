@@ -21,8 +21,14 @@
 
   h1 {
     font-size: 26px;
+    line-height: 28px;
     font-weight: bold;
     margin-bottom: 15px;
+
+    @media #{$xsmall} {
+      font-size: 21px;
+      line-height: 24px;
+    }
   }
 }
 
@@ -30,6 +36,7 @@
   display: flex;
   height: 400px;
   margin-bottom: 20px;
+  overflow-x: auto;
 
   img {
     height: 100%;
@@ -39,17 +46,18 @@
 }
 
 .t-main {
-  margin-right: 10px;
+  margin-right: 9.5px;
 }
 
 .t-secondary {
   display: flex;
+
   img {
     display: block;
   }
 
   img + img {
-    margin-left: 10px;
+    margin-left: 9.5px;
   }
 }
 
@@ -102,8 +110,15 @@
 }
 
 .t-place-img {
-  height: 205px;
+  height: 210px;
   overflow: hidden;
+  text-align: center;
+
+  img {
+    width: auto;
+    height: 230px;
+    max-width: none;
+  }
 }
 
 .t-place-text {
@@ -112,4 +127,42 @@
   font-weight: bold;
   padding-top: 10px;
   font-size: 14px;
+}
+
+@media #{$small} {
+  .t-container {
+    height: 300px;
+  }
+
+  .t-places {
+    margin-left: -10px;
+
+    li {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media #{$xsmall} {
+  .t-container {
+    margin-left: -10px;
+    margin-right: -10px;
+    height: 220px;
+  }
+
+  .t-phone {
+    font-size: 20px;
+    margin-top: -5px;
+  }
+
+  .t-places {
+    margin-left: 0;
+    flex-direction: column;
+
+    li {
+      margin-left: 0;
+      margin-bottom: 25px;
+      width: 100%;
+    }
+  }
 }
