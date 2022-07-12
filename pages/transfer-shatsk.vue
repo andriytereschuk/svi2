@@ -3,8 +3,9 @@
     <div class="bus-entry">
       <h1>Бус з водієм на замовлення - Шацьк, район, міжобласні поїздки</h1>
       <p class="text-small bold">
-        Комфортабельний бус - розкладні крісла, паски безпеки, кондиціонер. 22
-        сидячих місця.
+        Комфортабельний бус - розкладні крісла, паски безпеки, кондиціонер, USB
+        для зарядки телефона. Великий багажник, панорамний люк. 22 сидячих
+        місця.
       </p>
       <p>
         Обслуговуємо різного роду заходи: урочистості, весілля, день народження,
@@ -16,32 +17,26 @@
     </div>
 
     <div class="t-container">
-      <div class="t-main">
-        <img
-          src="https://a.storyblok.com/f/153450/1000x706/6b59f8148e/bus-front-left.jpg"
-          alt=""
-        />
-      </div>
-      <div class="t-secondary">
-        <img
-          src="https://a.storyblok.com/f/153450/563x750/1354084802/bus-entry.jpg"
-          alt=""
-        />
-
-        <img
-          src="https://a.storyblok.com/f/153450/681x750/c4badca316/bus-left-seats.jpg"
-          alt=""
-        />
-
-        <img
-          src="https://a.storyblok.com/f/153450/563x750/dcd43e92a7/bus-two-seats.jpg"
-          alt=""
-        />
-      </div>
+      <img
+        src="https://a.storyblok.com/f/153450/1000x706/6b59f8148e/bus-front-left.jpg"
+        alt=""
+      />
+      <img
+        src="https://a.storyblok.com/f/153450/563x750/1354084802/bus-entry.jpg"
+        alt=""
+      />
+      <img
+        src="https://a.storyblok.com/f/153450/681x750/c4badca316/bus-left-seats.jpg"
+        alt=""
+      />
+      <img
+        src="https://a.storyblok.com/f/153450/563x750/dcd43e92a7/bus-two-seats.jpg"
+        alt=""
+      />
     </div>
 
     <section class="box t-contacts">
-      <h2>Контакти</h2>
+      <h2>Контакти для перевезень</h2>
       <textarea
         ref="areaNumber"
         class="area-number"
