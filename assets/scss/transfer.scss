@@ -118,6 +118,10 @@
 }
 
 @media #{$small} {
+  .menu li:first-child {
+    display: none;
+  }
+  
   .t-container {
     height: 300px;
   }
