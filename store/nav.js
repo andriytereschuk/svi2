@@ -21,6 +21,10 @@ const initialState = {
       href: '/routes',
     },
     {
+      name: 'Замовити автобус',
+      href: '/transfer',
+    },
+    {
       name: 'Контакти',
       href: '/contacts',
     },

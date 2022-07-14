@@ -187,9 +187,9 @@ header {
         }
       }
 
-      &:first-child {
-        display: block;
-      }
+      // &:first-child {
+      //   display: block;
+      // }
     }
 
     li + li {

@@ -14,6 +14,23 @@
     font-weight: bold;
     font-size: 20px;
   }
+
+  .t-features {
+    background-color: #4aaacf;
+    background-repeat: no-repeat;
+    background-image: url('/images/star.png');
+    background-size: 32px;
+    background-position: 12px center;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 15px 8px 15px 56px;
+    color: #fff;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.15);
+
+    @media #{$small} {
+      margin: 0 -10px 13px -10px;
+    }
+  }
 }
 
 .bus-entry {
@@ -28,6 +45,7 @@
     @media #{$xsmall} {
       font-size: 21px;
       line-height: 24px;
+      padding-top: 20px;
     }
   }
 }
@@ -101,6 +119,7 @@
   height: 210px;
   overflow: hidden;
   text-align: center;
+  background-color: #f1f1f1;
 
   img {
     width: auto;
@@ -118,10 +137,6 @@
 }
 
 @media #{$small} {
-  .menu li:first-child {
-    display: none;
-  }
-  
   .t-container {
     height: 300px;
   }

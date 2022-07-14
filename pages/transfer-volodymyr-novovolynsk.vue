@@ -2,17 +2,17 @@
   <div class="container bus-page">
     <div class="bus-entry">
       <h1>
-        Бус з водієм на замовлення - Шацьк, Любомль, ближні села, район,
+        Автобус з водієм на замовлення - Володимир, Нововолинськ, район,
         міжобласні поїздки.
       </h1>
       <p class="t-features">
-        Комфорт: розкладні крісла, паски безпеки, кондиціонер, телевізор, USB
-        для зарядки. Великий багажник, панорамний люк.
-        <strong>22 сидячих місця.</strong>
+        Комфортабельний бус - розкладні крісла, паски безпеки, кондиціонер, USB
+        для зарядки телефона, телевізор. Великий багажник, панорамний люк.
+        <strong>22 сидячих місця. </strong>
       </p>
       <p>
         Обслуговуємо різного роду заходи: урочистості, весілля, день народження,
-        спортивні та туристичні змагання, екскурсії, розвозка працівників.
+        спортивні та туристичні змагання, екскурсії.
         <br />
         Трансфер пасажирів доступний і в інші області. Дзвоніть, пишіть - надамо
         детальнішу інформацію.
@@ -51,19 +51,19 @@
         href="https://t.me/+380680351779"
         class="t-contact"
         target="_blank"
-        @click="track('sv_transfer_shatsk_telegram')"
+        @click="track('sv_transfer_volodymyr_telegram')"
         >Telegram</a
       >
       <a
         href="viber://chat/?number=%2B380680351779"
         class="t-contact"
-        @click="track('sv_transfer_shatsk_viber')"
+        @click="track('sv_transfer_volodymyr_viber')"
         >Viber</a
       >
     </section>
 
     <section class="box popular">
-      <h2>Популярні маршрути з Шацька</h2>
+      <h2>Популярні маршрути з Володимира</h2>
 
       <ul class="t-places">
         <li>
@@ -75,7 +75,7 @@
               alt=""
             />
           </div>
-          <span class="t-place-text">Шацьк - Львів</span>
+          <span class="t-place-text">Володимир - Львів</span>
         </li>
 
         <li>
@@ -87,7 +87,7 @@
               alt=""
             />
           </div>
-          <span class="t-place-text">Шацьк - Карпати</span>
+          <span class="t-place-text">Володимир - Карпати</span>
         </li>
 
         <li>
@@ -99,7 +99,7 @@
               alt=""
             />
           </div>
-          <span class="t-place-text">Шацьк - Буковель</span>
+          <span class="t-place-text">Володимир - Буковель</span>
         </li>
 
         <li>
@@ -111,7 +111,7 @@
               alt=""
             />
           </div>
-          <span class="t-place-text">Шацьк - Косино</span>
+          <span class="t-place-text">Володимир - Косино</span>
         </li>
       </ul>
     </section>
@@ -130,22 +130,22 @@ export default {
   },
   head: {
     title:
-      'Нерегулярні пасажирські перевезення з Шацька, Любомля, ближніх сіл - по району та Україні',
+      'Замовлення автобуса з Володимира, Нововолинська, ближніх сіл - по району та Україні',
     meta: [
       {
         hid: 'description',
         name: 'description',
         content:
-          'Замовлення, оренда автобуса для поїздок. Таксі бус. Шацьк, Любомль, Світязь, Згорани, Мельники, Пульмо, Головне, Машів, по всьому району та всередині країни',
+          'Нерегулярні пасажирські перевезення: Володимир, Нововолинськ, Устилуг, Верба, Іваничі, по всьому району та всередині країни',
       },
       {
         property: 'og:title',
         content:
-          'Бус на замовлення | Шацьк | Любомль | Район | Міжобласні поїздки',
+          'Бус на замовлення | Володимир | Нововолинськ | Район | Міжобласні поїздки',
       },
       {
         property: 'og:url',
-        content: 'https://www.svilake.com/transfer-shatsk-lyuboml',
+        content: 'https://www.svilake.com/transfer-volodymyr-novovolynsk',
       },
       {
         property: 'og:image',
@@ -157,7 +157,7 @@ export default {
       {
         hid: 'canonical',
         rel: 'canonical',
-        href: 'https://www.svilake.com/transfer-shatsk-lyuboml',
+        href: 'https://www.svilake.com/transfer-volodymyr-novovolynsk',
       },
     ],
   },
@@ -165,7 +165,7 @@ export default {
     copy(event) {
       event.preventDefault()
 
-      this.track('sv_transfer_copy_shatsk')
+      this.track('sv_transfer_copy_volodymyr')
 
       if (!navigator.clipboard) {
         this.fallbackCopy()
