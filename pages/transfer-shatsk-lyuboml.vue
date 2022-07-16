@@ -62,59 +62,7 @@
       >
     </section>
 
-    <section class="box popular">
-      <h2>Популярні маршрути з Шацька</h2>
-
-      <ul class="t-places">
-        <li>
-          <div class="t-place-img">
-            <img
-              src="https://a.storyblok.com/f/153450/900x600/bdc69e066f/places-lviv.jpeg"
-              loading="lazy"
-              height="230"
-              alt=""
-            />
-          </div>
-          <span class="t-place-text">Шацьк - Львів</span>
-        </li>
-
-        <li>
-          <div class="t-place-img">
-            <img
-              src="https://a.storyblok.com/f/153450/1180x730/bb548d6caa/places-karpaty.jpeg"
-              loading="lazy"
-              height="230"
-              alt=""
-            />
-          </div>
-          <span class="t-place-text">Шацьк - Карпати</span>
-        </li>
-
-        <li>
-          <div class="t-place-img">
-            <img
-              src="https://a.storyblok.com/f/153450/800x533/e88d6b790d/places-bookovel.jpeg"
-              loading="lazy"
-              height="230"
-              alt=""
-            />
-          </div>
-          <span class="t-place-text">Шацьк - Буковель</span>
-        </li>
-
-        <li>
-          <div class="t-place-img">
-            <img
-              src="https://a.storyblok.com/f/153450/1280x720/63c3d991f3/places-kosuno.jpeg"
-              loading="lazy"
-              height="230"
-              alt=""
-            />
-          </div>
-          <span class="t-place-text">Шацьк - Косино</span>
-        </li>
-      </ul>
-    </section>
+    <Places :data="places" />
   </div>
 </template>
 
@@ -126,6 +74,20 @@ export default {
   data() {
     return {
       phoneNumber: '+380680351779',
+      places: {
+        current: 'Шацьк',
+        title: 'Популярні маршрути з Шацька',
+        items: [
+          'Львів',
+          'Буковель',
+          'Славське',
+          'Косино',
+          'Карпати',
+          'Яремча',
+          'Синевир',
+          'Драгобрат',
+        ],
+      },
     }
   },
   head: {

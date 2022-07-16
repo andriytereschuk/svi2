@@ -48,6 +48,10 @@ export default {
           name: 'Автобус на замовлення з Луцьк, Ковель, Турійськ, Ратно',
           href: '/transfer-lutsk-kovel',
         },
+        {
+          name: 'Замовити автобус Львів, Червоноград, Великі Мости, Броди',
+          href: '/transfer-lviv-сhervonohrad',
+        },
       ],
     }
   },
@@ -151,6 +155,7 @@ export default {
 .tr-content {
   padding-top: 30px;
   margin-bottom: 20px;
+
   p {
     font-size: 18px;
     line-height: 24px;
@@ -192,6 +197,7 @@ ul {
     font-size: 18px;
     font-weight: 300;
     text-decoration: underline;
+    color: $blue;
 
     &:hover {
       text-decoration: none;

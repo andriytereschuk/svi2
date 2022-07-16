@@ -2,19 +2,20 @@
   <div class="container bus-page">
     <div class="bus-entry">
       <h1>
-        Автобус з водієм на замовлення - Володимир, Нововолинськ, район,
+        Автобус з водієм на замовлення - Львів, Червоноград, Броди, Трускавець,
         міжобласні поїздки.
       </h1>
       <p class="t-features">
-        Комфортабельний бус - розкладні крісла, паски безпеки, кондиціонер, USB
-        для зарядки телефона, телевізор. Великий багажник, панорамний люк.
+        Комфорт: розкладні крісла, паски безпеки, кондиціонер над кожним
+        сидінням, USB для зарядки, телевізор. Великий багажник, панорамний люк.
         <strong>22 сидячих місця. </strong>
       </p>
       <p>
-        Обслуговуємо різного роду заходи: урочистості, весілля, день народження,
-        спортивні та туристичні змагання, екскурсії.
+        Обслуговуємо різного роду заходи: екскурсії, спортивні та туристичні
+        змагання, весілля, день народження.
+        <strong>Трансфер на відпочинок.</strong>
         <br />
-        Трансфер пасажирів доступний і в інші області. Дзвоніть, пишіть - надамо
+        Перевезення доступні і в інші області. Дзвоніть, пишіть - надамо
         детальнішу інформацію.
       </p>
     </div>
@@ -51,13 +52,13 @@
         href="https://t.me/+380680351779"
         class="t-contact"
         target="_blank"
-        @click="track('sv_transfer_volodymyr_telegram')"
+        @click="track('sv_transfer_lviv_telegram')"
         >Telegram</a
       >
       <a
         href="viber://chat/?number=%2B380680351779"
         class="t-contact"
-        @click="track('sv_transfer_volodymyr_viber')"
+        @click="track('sv_transfer_lviv_viber')"
         >Viber</a
       >
     </section>
@@ -75,39 +76,38 @@ export default {
     return {
       phoneNumber: '+380680351779',
       places: {
-        current: 'Володимир',
-        title: 'Популярні маршрути з Володимира',
+        current: 'Львів',
+        title: 'Популярні маршрути зі Львова',
         items: [
-          'Шацьк',
-          'Львів',
-          'Косино',
-          'Буковель',
           'Славське',
+          'Шацьк',
+          'Буковель',
+          'Косино',
           'Карпати',
           'Яремча',
           'Синевир',
+          'Драгобрат',
         ],
       },
     }
   },
   head: {
-    title:
-      'Замовлення автобуса з Володимира, Нововолинська, ближніх сіл - по району та Україні',
+    title: 'Замовлення автобуса Львів, Червоноград, ближні міста, села',
     meta: [
       {
         hid: 'description',
         name: 'description',
         content:
-          'Нерегулярні пасажирські перевезення: Володимир, Нововолинськ, Устилуг, Верба, Іваничі, по всьому району та всередині країни',
+          'Нерегулярні пасажирські перевезення по Львівській області та всередині країни: Львів, Червоноград, Великі Мости, Броди, Трускавець, Новояворівськ, Самбір, Дрогобич',
       },
       {
         property: 'og:title',
         content:
-          'Бус на замовлення | Володимир | Нововолинськ | Район | Міжобласні поїздки',
+          'Бус на замовлення | Львів | Червоноград | Область | Міжобласні поїздки',
       },
       {
         property: 'og:url',
-        content: 'https://www.svilake.com/transfer-volodymyr-novovolynsk',
+        content: 'https://www.svilake.com/transfer-lviv-сhervonohrad',
       },
       {
         property: 'og:image',
@@ -119,7 +119,7 @@ export default {
       {
         hid: 'canonical',
         rel: 'canonical',
-        href: 'https://www.svilake.com/transfer-volodymyr-novovolynsk',
+        href: 'https://www.svilake.com/transfer-lviv-сhervonohrad',
       },
     ],
   },
@@ -127,7 +127,7 @@ export default {
     copy(event) {
       event.preventDefault()
 
-      this.track('sv_transfer_copy_volodymyr')
+      this.track('sv_transfer_copy_lviv')
 
       if (!navigator.clipboard) {
         this.fallbackCopy()

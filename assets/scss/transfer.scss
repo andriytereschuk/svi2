@@ -106,12 +106,21 @@
 
 .t-places {
   display: flex;
+  flex-wrap: wrap;
   margin-left: -20px;
 
   li {
-    width: 25%;
-    margin-left: 20px;
+    width: calc(25% - 20px);
+    margin: 0 0 30px 20px;
     overflow: hidden;
+  }
+
+  h3 {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 10px;
+    font-size: 14px;
+    line-height: 18px;
   }
 }
 
@@ -126,14 +135,6 @@
     height: 230px;
     max-width: none;
   }
-}
-
-.t-place-text {
-  display: block;
-  text-align: center;
-  font-weight: bold;
-  padding-top: 10px;
-  font-size: 14px;
 }
 
 @media #{$small} {
