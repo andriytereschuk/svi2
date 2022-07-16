@@ -59,11 +59,16 @@
   img {
     height: 100%;
     width: auto;
-    border: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   img + img {
     margin-left: 9.5px;
+  }
+
+  @media #{$small} {
+    img + img {
+      margin-left: 5px;
+    }
   }
 }
 
