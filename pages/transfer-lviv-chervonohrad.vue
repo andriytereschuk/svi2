@@ -107,7 +107,7 @@ export default {
       },
       {
         property: 'og:url',
-        content: 'https://www.svilake.com/transfer-lviv-сhervonohrad',
+        content: 'https://www.svilake.com/transfer-lviv-chervonohrad',
       },
       {
         property: 'og:image',
@@ -119,7 +119,7 @@ export default {
       {
         hid: 'canonical',
         rel: 'canonical',
-        href: 'https://www.svilake.com/transfer-lviv-сhervonohrad',
+        href: 'https://www.svilake.com/transfer-lviv-chervonohrad',
       },
     ],
   },

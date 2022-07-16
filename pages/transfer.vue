@@ -50,7 +50,7 @@ export default {
         },
         {
           name: 'Замовити автобус Львів, Червоноград, Великі Мости, Броди',
-          href: '/transfer-lviv-сhervonohrad',
+          href: '/transfer-lviv-chervonohrad',
         },
       ],
     }
