@@ -52,7 +52,7 @@
 
             <div class="price_bus">
               <div class="info_head"><i class="iprice"></i>Ціни:</div>
-              <span class="li"><b>460 грн:</b>на Шацьк, Світязь</span>
+              <span class="li"><b>900 грн:</b>на Шацьк, Світязь</span>
             </div>
 
             <div class="model_bus">
