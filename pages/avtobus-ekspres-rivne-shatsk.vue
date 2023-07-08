@@ -54,7 +54,7 @@
 
             <div class="price_bus">
               <div class="info_head"><i class="iprice"></i>Ціни:</div>
-              <span class="li"><b>200 грн:</b>на Шацьк, Світязь</span>
+              <span class="li"><b>400 грн</b> дорослі <b>300 грн</b> діти: на Шацьк, Світязь <b>(ціну уточнювати)</b></span>
             </div>
 
             <div class="model_bus">
