@@ -54,7 +54,7 @@
               <h1>Реквізити</h1>
               <div class="cart-item">
                 <div class="cart-title">Номер картки Приватбанку:</div>
-                <div class="cart-number">5168 7573 7654 8006</div>
+                <div class="cart-number">4149 4991 5859 1972</div>
                 <div>
                   <a href="#" class="btn-contact" @click="copyCardNumber"
                     >Копіювати номер картки</a
@@ -111,7 +111,7 @@ export default {
   data() {
     return {
       phoneNumber: '+380976541951',
-      cardNumber: 5168757376548006,
+      cardNumber: 4149499158591972,
     }
   },
   head: {
