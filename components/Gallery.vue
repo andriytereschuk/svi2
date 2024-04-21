@@ -10,7 +10,6 @@
 import lightGallery from 'lightgallery'
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
 import { isDev } from '@/helpers/isDev'
-let instance
 
 export default {
   props: {
@@ -23,7 +22,9 @@ export default {
       default: true,
     },
   },
-  data: () => ({}),
+  data: () => ({
+    instance: null,
+  }),
   computed: {
     items() {
       return this.images.map((image) => ({
@@ -40,11 +41,13 @@ export default {
     },
   },
   mounted() {
-    instance = lightGallery(this.$el, {
-      plugins: [lgThumbnail],
-      speed: 500,
-      download: false,
-    })
+    if (!this.instance) {
+      this.instance = lightGallery(this.$el, {
+        plugins: [lgThumbnail],
+        speed: 500,
+        download: false,
+      })
+    }
 
     this.$el.addEventListener('lgBeforeClose', () => {
       this.$emit('hide')
@@ -55,11 +58,11 @@ export default {
     }
   },
   beforeDestroy() {
-    instance.destroy()
+    this.instance.destroy()
   },
   methods: {
     initGallery() {
-      instance.openGallery(0)
+      this.instance.openGallery(0)
     },
   },
 }
