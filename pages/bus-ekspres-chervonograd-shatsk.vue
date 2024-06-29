@@ -86,6 +86,10 @@
 
 <script>
 export default {
+  async fetch({ store, app }) {
+    if (store.state.cards.cards.length) return
+    return await store.dispatch('cards/fetchCards', app)
+  },
   head: {
     title: 'Експрес бус Червоноград, Сокаль - Шацькі озера.',
     meta: [

@@ -36,9 +36,15 @@
 import { mapState } from 'vuex'
 
 export default {
-  async fetch({ store, app }) {
-    if (store.state.buses.buses.length) return
-    return await store.dispatch('buses/fetchBuses', app)
+  fetch({ store, app }) {
+    return Promise.all([
+      store.state.buses.buses.length
+        ? Promise.resolve()
+        : store.dispatch('buses/fetchBuses', app),
+      store.state.cards.cards.length
+        ? Promise.resolve()
+        : store.dispatch('cards/fetchCards', app),
+    ])
   },
   head: {
     title:

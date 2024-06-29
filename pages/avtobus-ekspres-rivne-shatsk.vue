@@ -54,7 +54,10 @@
 
             <div class="price_bus">
               <div class="info_head"><i class="iprice"></i>Ціни:</div>
-              <span class="li"><b>400 грн</b> дорослі <b>300 грн</b> діти: на Шацьк, Світязь <b>(ціну уточнювати)</b></span>
+              <span class="li"
+                ><b>400 грн</b> дорослі <b>300 грн</b> діти: на Шацьк, Світязь
+                <b>(ціну уточнювати)</b></span
+              >
             </div>
 
             <div class="model_bus">
@@ -85,6 +88,10 @@
 
 <script>
 export default {
+  async fetch({ store, app }) {
+    if (store.state.cards.cards.length) return
+    return await store.dispatch('cards/fetchCards', app)
+  },
   head: {
     title: 'ЕКСПРЕС Рівне–Світязь (Шацьк, Гряда, Мельники, "Лісова пісня").',
     meta: [

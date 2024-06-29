@@ -82,6 +82,10 @@
 
 <script>
 export default {
+  async fetch({ store, app }) {
+    if (store.state.cards.cards.length) return
+    return await store.dispatch('cards/fetchCards', app)
+  },
   head: {
     title: 'Експрес автобус Київ - Шацьк. Транзит на Шацькі озера.',
     meta: [

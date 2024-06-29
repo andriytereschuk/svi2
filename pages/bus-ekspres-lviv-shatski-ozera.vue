@@ -41,9 +41,8 @@
 
         <p>
           Лише одна зупинка на каву, без заїздів на автостанції. Поїздка дійсно
-          буде комфортною і безпечною:
-          <b>Mercedes-Benz Sprinter 515 пас</b> оснащений розкладними сидіннями
-          з пасками безпеки і кондиціонером.
+          буде комфортною і безпечною: Автобус оснащений розкладними сидіннями з
+          пасками безпеки і кондиціонером.
         </p>
 
         <ul class="b-time">
@@ -120,6 +119,10 @@ export default {
     return {
       phoneNumber: '+380976541951',
     }
+  },
+  async fetch({ store, app }) {
+    if (store.state.cards.cards.length) return
+    return await store.dispatch('cards/fetchCards', app)
   },
   head: {
     title:
