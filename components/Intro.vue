@@ -1,10 +1,15 @@
 <template>
   <section class="intro">
-    <div v-if="data.image" class="intro-img" :style="mainImage">
+    <div
+      v-if="data.image"
+      class="intro-img"
+      :style="mainImage"
+      @click="openGallery"
+    >
       <button
         v-if="slides.length > 1"
         class="btn-gallery btn btn--primary"
-        @click="openGallery"
+        @click.stop="openGallery"
       >
         <i class="icon icon-expand"></i>
         <span>всі фото</span>
