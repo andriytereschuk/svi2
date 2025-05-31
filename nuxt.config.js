@@ -13,11 +13,18 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'robots', content: 'all' },
-      { name: 'author', content: 'Андрій Терещук' },
+      { name: 'author', content: 'Andrii Tereshchuk' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5226528712100162',
+        async: true,
+        crossorigin: 'anonymous',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
