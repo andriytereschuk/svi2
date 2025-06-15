@@ -51,11 +51,14 @@
 
             <div class="price_bus">
               <div class="info_head"><i class="iprice"></i>Ціни:</div>
-              <span class="li"><b>270 грн:</b>на Шацьк, Світязь</span>
               <span class="li"
-                ><b>320 грн:</b>на Гряда, Медик, "Лісова Пісня", пансіонат
-                "Шацькі озера", Мельники, Пульмо</span
+                ><b>350 грн:</b>до Світязя, Шацька, Гряди, пансіонат "Шацькі
+                озера".</span
               >
+              <span class="li"
+                ><b>400 грн:</b>Мельники, Гаївка (Лісова пісня).</span
+              >
+              <span class="li"><b>450 грн:</b>Медик, Пульмо.</span>
             </div>
 
             <div class="model_bus">
