@@ -52,10 +52,10 @@
               <span class="li"><b>Час в дорозі:</b>2:30 годин</span>
             </div>
 
-            <div class="price_bus">
+            <!-- <div class="price_bus">
               <div class="info_head"><i class="iprice"></i>Ціни:</div>
               <span class="li"><b>150 грн:</b>на Шацьк, Світязь</span>
-            </div>
+            </div> -->
 
             <div class="model_bus">
               <div class="info_head"><i class="ibus"></i> Мікроавтобуси</div>

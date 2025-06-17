@@ -61,11 +61,11 @@
               <span class="li"><b>450 грн:</b>Медик, Пульмо.</span>
             </div>
 
-            <div class="model_bus">
+            <!-- <div class="model_bus">
               <div class="info_head"><i class="ibus"></i> Мікроавтобуси</div>
               <span class="li">Volkswagen Transporter</span>
               <span class="li">Opel</span>
-            </div>
+            </div> -->
             <div class="star_bus">
               <div class="info_head"><i class="istar"></i>Комфорт:</div>
               <span class="li">кондиціонер</span>
