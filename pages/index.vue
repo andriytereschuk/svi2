@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Intro :data="content">
+    <Intro :data="content" :video="video">
       <div class="richtext">
         <h3 class="pt-40">Варіанти розміщення:</h3>
 
@@ -31,6 +31,7 @@ export default {
   data() {
     return {
       isGalleryOpened: false,
+      video: null,
     }
   },
   fetch({ store, app }) {

@@ -7,8 +7,16 @@
       @click="openGallery"
     >
       <button
+        v-if="video"
+        class="btn-intro btn-video btn btn--primary"
+        @click.stop="openVideo"
+      >
+        <i class="icon icon-play"></i>
+        <span>відео</span>
+      </button>
+      <button
         v-if="slides.length > 1"
-        class="btn-gallery btn btn--primary"
+        class="btn-intro btn-gallery btn btn--primary"
         @click.stop="openGallery"
       >
         <i class="icon icon-expand"></i>
@@ -124,6 +132,17 @@
         :images="slides"
         @hide="closeGallery"
       ></Gallery>
+
+      <div v-if="isVideoOpened" class="video-popup">
+        <iframe
+          width="800"
+          height="800"
+          :src="video"
+          title=""
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe>
+      </div>
     </client-only>
   </section>
 </template>
@@ -159,9 +178,15 @@ export default {
       type: Boolean,
       default: true,
     },
+    video: {
+      type: String,
+      require: false,
+      default: '',
+    },
   },
   data() {
     return {
+      isVideoOpened: false,
       isGalleryOpened: false,
       phoneNumber: '+380976541951',
       mapAddress:
@@ -194,6 +219,9 @@ export default {
     },
   },
   methods: {
+    openVideo() {
+      this.isVideoOpened = true
+    },
     openGallery() {
       this.track('sv_open_photos')
       this.isGalleryOpened = true
@@ -354,9 +382,8 @@ h1 {
   margin-bottom: 20px;
 }
 
-.btn-gallery {
+.btn-intro {
   position: absolute;
-  right: 8px;
   bottom: 8px;
   z-index: 2;
 
@@ -369,14 +396,29 @@ h1 {
   @media #{$small} {
     top: auto;
     bottom: -15px;
-    right: 13px;
-    padding: 7px 12px;
+    padding: 8px 12px;
     border-radius: 15px;
     font-size: 11px;
 
     i {
       display: none;
     }
+  }
+}
+
+.btn-gallery {
+  right: 8px;
+
+  @media #{$small} {
+    right: 13px;
+  }
+}
+
+.btn-video {
+  left: 8px;
+
+  @media #{$small} {
+    left: 13px;
   }
 }
 
@@ -641,6 +683,29 @@ h1 {
     li + li {
       margin-top: 30px;
     }
+  }
+}
+
+.video-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    max-height: 450px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 30px;
+    border: none;
   }
 }
 </style>

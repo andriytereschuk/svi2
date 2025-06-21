@@ -1,77 +1,81 @@
 <template>
-  <div class="container bus-page">
-    <div class="cols">
-      <div class="cols-left">
-        <div class="bus-entry">
-          <h1>Експрес-Бусік Львів - Шацькі озера</h1>
+  <div>
+    <BannerSmall />
+    <div class="container bus-page">
+      <div class="cols">
+        <div class="cols-left">
+          <div class="bus-entry">
+            <h1>Експрес-Бусік Львів - Шацькі озера</h1>
+            <p>
+              Доїзд до Шацька, Світязя, Гряди, Медика, Лісова пісня, пансіонат
+              "Шацькі озера".
+            </p>
+          </div>
+
+          <div class="b-container">
+            <a href="#" class="b-contact-btn" @click="copy"
+              >Копіювати номер диспетчера</a
+            >
+            <textarea
+              ref="areaNumber"
+              class="area-number"
+              :value="phoneNumber"
+            ></textarea>
+            <div class="b-main-img">
+              <img
+                src="https://a.storyblok.com/f/153450/1000x750/c3b61e002b/bus-front-aside.jpg"
+                alt=""
+              />
+            </div>
+            <div class="b-img-1">
+              <img
+                src="https://a.storyblok.com/f/153450/1000x750/6b23fd1745/bus-front.jpg"
+                alt=""
+              />
+            </div>
+            <div class="b-img-2">
+              <img
+                src="https://a.storyblok.com/f/153450/563x750/1354084802/bus-entry.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+
           <p>
-            Доїзд до Шацька, Світязя, Гряди, Медика, Лісова пісня, пансіонат
-            "Шацькі озера".
+            Лише одна зупинка на каву, без заїздів на автостанції. Поїздка
+            дійсно буде комфортною і безпечною: Автобус оснащений розкладними
+            сидіннями з пасками безпеки і кондиціонером.
           </p>
-        </div>
 
-        <div class="b-container">
-          <a href="#" class="b-contact-btn" @click="copy"
-            >Копіювати номер диспетчера</a
-          >
-          <textarea
-            ref="areaNumber"
-            class="area-number"
-            :value="phoneNumber"
-          ></textarea>
-          <div class="b-main-img">
-            <img
-              src="https://a.storyblok.com/f/153450/1000x750/c3b61e002b/bus-front-aside.jpg"
-              alt=""
-            />
-          </div>
-          <div class="b-img-1">
-            <img
-              src="https://a.storyblok.com/f/153450/1000x750/6b23fd1745/bus-front.jpg"
-              alt=""
-            />
-          </div>
-          <div class="b-img-2">
-            <img
-              src="https://a.storyblok.com/f/153450/563x750/1354084802/bus-entry.jpg"
-              alt=""
-            />
-          </div>
-        </div>
+          <ul class="b-time">
+            <li><b>7:00</b> Львів - Шацьк</li>
+            <li><b>16:00</b> Шацьк - Львів</li>
+            <li>Час в дорозі: <b>3:30 год</b></li>
+          </ul>
 
-        <p>
-          Лише одна зупинка на каву, без заїздів на автостанції. Поїздка дійсно
-          буде комфортною і безпечною: Автобус оснащений розкладними сидіннями з
-          пасками безпеки і кондиціонером.
-        </p>
+          <h2>Ціни зі Львова</h2>
 
-        <ul class="b-time">
-          <li><b>7:00</b> Львів - Шацьк</li>
-          <li><b>16:00</b> Шацьк - Львів</li>
-          <li>Час в дорозі: <b>3:30 год</b></li>
-        </ul>
+          <ul class="b-prices">
+            <li>
+              <i>500 грн</i> до Світязя, Шацька, Гряди, пансіонат "Шацькі
+              озера".
+            </li>
+            <li><i>550 грн</i> Мельники, Гаївка (Лісова пісня).</li>
+            <li><i>600 грн</i> Медик, Пульмо.</li>
+          </ul>
 
-        <h2>Ціни зі Львова</h2>
+          <h2>Ціни з Червонограду</h2>
 
-        <ul class="b-prices">
-          <li>
-            <i>500 грн</i> до Світязя, Шацька, Гряди, пансіонат "Шацькі озера".
-          </li>
-          <li><i>550 грн</i> Мельники, Гаївка (Лісова пісня).</li>
-          <li><i>600 грн</i> Медик, Пульмо.</li>
-        </ul>
+          <ul class="b-prices red-prices">
+            <li>
+              <i>350 грн</i> до Світязя, Шацька, Гряди, пансіонат "Шацькі
+              озера".
+            </li>
+            <li><i>400 грн</i> Мельники, Гаївка (Лісова пісня).</li>
+            <li><i>450 грн</i> Медик, Пульмо.</li>
+          </ul>
 
-        <h2>Ціни з Червонограду</h2>
-
-        <ul class="b-prices red-prices">
-          <li>
-            <i>350 грн</i> до Світязя, Шацька, Гряди, пансіонат "Шацькі озера".
-          </li>
-          <li><i>400 грн</i> Мельники, Гаївка (Лісова пісня).</li>
-          <li><i>450 грн</i> Медик, Пульмо.</li>
-        </ul>
-
-        <!-- <h2>Ціни з Нововолинська</h2>
+          <!-- <h2>Ціни з Нововолинська</h2>
 
         <ul class="b-prices">
           <li><i>230 грн</i> до Світязя, Шацька.</li>
@@ -80,7 +84,7 @@
             озера", Мельники, Пульмо.
           </li>
         </ul> -->
-        <!-- 
+          <!-- 
         <h2>Ціни з Володимира</h2>
 
         <ul class="b-prices red-prices">
@@ -91,20 +95,21 @@
           </li>
         </ul> -->
 
-        <p>
-          <b>Забронювати місця</b> можна зателефонувавши до диспетчера за
-          номером: <span class="b-call-number">+380976541951</span>
-          <a href="#" class="b-contact-btn" @click="copy">Копіювати номер</a>
-          <a
-            href="tel:+380976541951"
-            class="btn-call b-contact-btn"
-            @click="track('sv_phone_call-lviv')"
-            >Телефонувати</a
-          >
-        </p>
-      </div>
-      <div class="cols-right">
-        <Bunner />
+          <p>
+            <b>Забронювати місця</b> можна зателефонувавши до диспетчера за
+            номером: <span class="b-call-number">+380976541951</span>
+            <a href="#" class="b-contact-btn" @click="copy">Копіювати номер</a>
+            <a
+              href="tel:+380976541951"
+              class="btn-call b-contact-btn"
+              @click="track('sv_phone_call-lviv')"
+              >Телефонувати</a
+            >
+          </p>
+        </div>
+        <div class="cols-right">
+          <Bunner />
+        </div>
       </div>
     </div>
   </div>
