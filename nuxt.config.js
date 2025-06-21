@@ -56,7 +56,11 @@ export default {
   modules: [],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  hooks: {},
+  hooks: {
+    'render:route': (_, result) => {
+      result.html = result.html.replace(/\sdata-n-head="[^"]*"/g, '')
+    },
+  },
   server: {
     port: 3001, // default: 3000
   },
