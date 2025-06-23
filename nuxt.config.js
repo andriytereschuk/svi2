@@ -1,4 +1,5 @@
 // const isProd = process.env.NODE_ENV === 'production'
+import fs from 'fs'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -13,7 +14,6 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'robots', content: 'all' },
-      { name: 'author', content: 'Андрій Терещук' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
@@ -57,8 +57,27 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   hooks: {
-    'render:route': (_, result) => {
-      result.html = result.html.replace(/\sdata-n-head="[^"]*"/g, '')
+    done(generator) {
+      const path = require('path')
+      const distDir = generator.nuxt.options.generate.dir || 'dist'
+
+      function walk(dir) {
+        const entries = fs.readdirSync(dir, { withFileTypes: true })
+        for (const entry of entries) {
+          const fullPath = path.join(dir, entry.name)
+          if (entry.isDirectory()) {
+            walk(fullPath) // recurse into subfolder
+          } else if (entry.isFile() && fullPath.endsWith('.html')) {
+            let html = fs.readFileSync(fullPath, 'utf-8')
+
+            html = html.replace(/\sdata-n-head="[^"]*"/g, '')
+
+            fs.writeFileSync(fullPath, html, 'utf-8')
+          }
+        }
+      }
+
+      walk(distDir)
     },
   },
   server: {
