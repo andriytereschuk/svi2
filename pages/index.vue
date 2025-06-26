@@ -18,7 +18,7 @@
 
     <div class="flex-center pb-40">
       <a class="btn btn--primary" href="/homes">
-        <i class="icon icon-plus"></i> <span>дивитися всі пропозиції</span></a
+        <i class="icon icon-plus"></i> <span>Дивитися всі пропозиції</span></a
       >
     </div>
   </div>

@@ -1,6 +1,4 @@
 // const isProd = process.env.NODE_ENV === 'production'
-import fs from 'fs'
-
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -56,30 +54,7 @@ export default {
   modules: [],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  hooks: {
-    done(generator) {
-      const path = require('path')
-      const distDir = generator.nuxt.options.generate.dir || 'dist'
-
-      function walk(dir) {
-        const entries = fs.readdirSync(dir, { withFileTypes: true })
-        for (const entry of entries) {
-          const fullPath = path.join(dir, entry.name)
-          if (entry.isDirectory()) {
-            walk(fullPath) // recurse into subfolder
-          } else if (entry.isFile() && fullPath.endsWith('.html')) {
-            let html = fs.readFileSync(fullPath, 'utf-8')
-
-            html = html.replace(/\sdata-n-head="[^"]*"/g, '')
-
-            fs.writeFileSync(fullPath, html, 'utf-8')
-          }
-        }
-      }
-
-      walk(distDir)
-    },
-  },
+  hooks: {},
   server: {
     port: 3001, // default: 3000
   },
