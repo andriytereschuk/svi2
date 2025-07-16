@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="banner-small" to="/">
+  <nuxt-link v-if="enabled" class="banner-small" to="/">
     <span class="ban-img">
       <img
         src="https://a.storyblok.com/f/153450/1486x552/c4bc801d6d/svilake-banner-2.png"
@@ -11,25 +11,20 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
 export default {
   data() {
-    return {}
-  },
-  computed: {
-    ...mapState('cards', ['cards']),
-  },
-  mounted() {
-    if (this.cards.length) return
-    return this.$store.dispatch('cards/fetchCards', this.$nuxt.context.app)
+    return {
+      enabled: false,
+    }
   },
 }
 </script>
 
 <style lang="scss" scoped>
+@import '~/assets/scss/vars.scss';
+
 .banner-small {
-  display: flex;
+  display: none;
   background-color: #fff;
   align-items: center;
   font-size: 12px;
@@ -38,6 +33,10 @@ export default {
   text-transform: uppercase;
   color: #c22f46;
   text-decoration: underline;
+
+  @media #{$small} {
+    display: flex;
+  }
 
   &:hover {
     text-decoration: none;
