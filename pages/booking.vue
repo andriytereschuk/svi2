@@ -51,26 +51,53 @@
             Ви перераховуєте суму за 1 добу проживання на рахунок власника.
 
             <section>
-              <h1>Реквізити</h1>
+              <h1>Реквізити для сплати</h1>
               <div class="cart-item">
-                <div class="cart-title">Номер картки Приватбанку:</div>
-                <div class="cart-number">5168 7451 5334 6264</div>
+                <div class="cart-title">Отримувач:</div>
+                <div>ФОП Терещук Марія Антонівна</div>
+              </div>
+              <div class="cart-item">
+                <div class="cart-title">Призначення:</div>
+                <div>Оплата за оренду житла</div>
+              </div>
+              <div class="cart-item">
+                <div class="cart-title">IBAN:</div>
+                <div class="cart-number">{{ ibanNumber }}</div>
                 <div>
-                  <a href="#" class="btn-contact" @click="copyCardNumber"
-                    >Копіювати номер картки</a
+                  <a href="#" class="btn-contact" @click="copyIbanNumber"
+                    >Копіювати IBAN</a
                   >
                 </div>
                 <textarea
                   ref="cardRef"
                   class="area-number"
-                  :value="cardNumber"
+                  :value="ibanNumber"
                 ></textarea>
               </div>
 
               <div class="cart-item">
-                <div class="cart-title">Отримувач:</div>
-                <div>Терещук Марія Антонівна</div>
+                <div class="cart-title">ЄДРПОУ:</div>
+                <div class="cart-number">{{ edrpoyNumber }}</div>
+                <div>
+                  <a href="#" class="btn-contact" @click="copyEdrpoyNumber"
+                    >Копіювати ЄДРПОУ</a
+                  >
+                </div>
+                <textarea
+                  ref="edrpoyRef"
+                  class="area-number"
+                  :value="edrpoyNumber"
+                ></textarea>
               </div>
+            </section>
+
+            <section>
+              <h1>Aбо зчитайте QR код для сплати</h1>
+              <img
+                src="https://a.storyblok.com/f/153450/682x682/a1516b00af/transfer-qr-code.png"
+                alt=""
+                style="max-width: 220px"
+              />
             </section>
           </div>
         </div>
@@ -104,14 +131,15 @@
 </template>
 
 <script>
-const successCopyCb = () => alert('Номер скопійовано!')
+const successCopyCb = () => alert(`Номер скопійований`)
 const errorCopyCb = () => alert('Копіювання не підтримується вашим браузером')
 
 export default {
   data() {
     return {
       phoneNumber: '+380976541951',
-      cardNumber: 5168745153346264,
+      ibanNumber: 'UA313052990000026005000809038',
+      edrpoyNumber: '2556203545',
     }
   },
   head: {
@@ -150,7 +178,7 @@ export default {
       this.$refs.areaNumber.blur()
       return isCopied ? successCopyCb() : errorCopyCb()
     },
-    copyCardNumber(event) {
+    copyIbanNumber(event) {
       event.preventDefault()
 
       this.track('sv_copy_card_number')
@@ -160,7 +188,7 @@ export default {
         return
       }
       navigator.clipboard
-        .writeText(this.cardNumber)
+        .writeText(this.ibanNumber)
         .then(successCopyCb, errorCopyCb)
     },
     fallbackCopyCard() {
@@ -173,6 +201,29 @@ export default {
         isCopied = false
       }
       this.$refs.cardRef.blur()
+      return isCopied ? successCopyCb() : errorCopyCb()
+    },
+    copyEdrpoyNumber(event) {
+      event.preventDefault()
+
+      if (!navigator.clipboard) {
+        this.fallbackCopyEdrpoy()
+        return
+      }
+      navigator.clipboard
+        .writeText(this.edrpoyNumber)
+        .then(successCopyCb, errorCopyCb)
+    },
+    fallbackCopyEdrpoy() {
+      this.$refs.edrpoyRef.focus()
+      this.$refs.edrpoyRef.select()
+      let isCopied = false
+      try {
+        isCopied = document.execCommand('copy')
+      } catch (e) {
+        isCopied = false
+      }
+      this.$refs.edrpoyRef.blur()
       return isCopied ? successCopyCb() : errorCopyCb()
     },
     track(eventName) {
@@ -199,6 +250,8 @@ li {
 
   @media #{$small} {
     padding: 15px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
@@ -219,6 +272,7 @@ li {
     height: 60px;
     font-size: 13px;
     font-weight: 600;
+    margin-bottom: 16px;
   }
 }
 
@@ -310,7 +364,7 @@ li {
 
     .cart-number {
       text-align: center;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 600;
       padding: 10px 0;
 
