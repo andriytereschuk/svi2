@@ -3,7 +3,7 @@
     <BannerSmall />
     <div class="container">
       <div class="head_title">
-        <h1>Експрес-Бус Червоноград - Шацькі озера</h1>
+        <h1>Експрес-Бус Шептицький - Шацькі озера</h1>
         <p>
           Доїзд до Шацька, Світязя, Гряди, Медика, Лісова пісня, пансіонат
           "Шацькі озера".
@@ -31,7 +31,7 @@
             <div class="right_info">
               <div class="head_route">
                 <div class="head">
-                  <span>Червоноград</span> <span>Шацькі озера</span>
+                  <span>Шептицький</span> <span>Шацькі озера</span>
                 </div>
                 <div class="route">
                   <i></i>
@@ -46,21 +46,21 @@
                 <div class="info_head">
                   <i class="itime"></i> Час відправлення
                 </div>
-                <span class="li"><em>8:20</em> Червоноград - Шацьк</span>
-                <span class="li"><em>16:00</em> Шацьк - Червоноград</span>
+                <span class="li"><em>8:20</em> Шептицький - Шацьк</span>
+                <span class="li"><em>16:00</em> Шацьк - Шептицький</span>
                 <span class="li"><b>Час в дорозі:</b>3 - 3:30 годин</span>
               </div>
 
               <div class="price_bus">
                 <div class="info_head"><i class="iprice"></i>Ціни:</div>
                 <span class="li"
-                  ><b>350 грн:</b>до Світязя, Шацька, Гряди, пансіонат "Шацькі
+                  ><b>450 грн:</b>до Світязя, Шацька, Гряди, пансіонат "Шацькі
                   озера".</span
                 >
                 <span class="li"
-                  ><b>400 грн:</b>Мельники, Гаївка (Лісова пісня).</span
+                  ><b>500 грн:</b>Мельники, Гаївка (Лісова пісня).</span
                 >
-                <span class="li"><b>450 грн:</b>Медик, Пульмо.</span>
+                <span class="li"><b>550 грн:</b>Медик, Пульмо.</span>
               </div>
 
               <!-- <div class="model_bus">
@@ -99,17 +99,17 @@ export default {
     return await store.dispatch('cards/fetchCards', app)
   },
   head: {
-    title: 'Експрес бус Червоноград, Сокаль - Шацькі озера.',
+    title: 'Експрес бус Шептицький, Сокаль - Шацькі озера.',
     meta: [
       {
         hid: 'description',
         name: 'description',
-        content: 'Чим заїхати з Червонограда на Шацькі озера',
+        content: 'Чим заїхати з Шептицький на Шацькі озера',
       },
       {
         name: 'keywords',
         content:
-          'бус, автобус, експрес, червоноград, сокаль, шацьк, світязь, гряда',
+          'бус, автобус, експрес, шептицький, червоноград, сокаль, шацьк, світязь, гряда',
       },
       {
         property: 'og:url',

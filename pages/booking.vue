@@ -58,7 +58,7 @@
               </div>
               <div class="cart-item">
                 <div class="cart-title">Призначення:</div>
-                <div>Оплата за оренду житла</div>
+                <div>Оплата за тимчасове проживання</div>
               </div>
               <div class="cart-item">
                 <div class="cart-title">IBAN:</div>
@@ -90,15 +90,6 @@
                 ></textarea>
               </div>
             </section>
-
-            <section>
-              <h1>Aбо зчитайте QR код для сплати</h1>
-              <img
-                src="https://a.storyblok.com/f/153450/682x682/a1516b00af/transfer-qr-code.png"
-                alt=""
-                style="max-width: 220px"
-              />
-            </section>
           </div>
         </div>
       </li>
@@ -121,7 +112,7 @@
 
             <div class="confirm-section">
               Отримавши оплату житло буде гарантовано надане на визначену дату.
-              <b>Час заселення:</b> після 14:00. <b>Виселення:</b> до 12:00.
+              <b>Час заселення:</b> після 14:00. <b>Виселення:</b> до 11:00.
             </div>
           </div>
         </div>

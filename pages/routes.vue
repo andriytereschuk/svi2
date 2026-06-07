@@ -19,7 +19,7 @@
               <div class="bus_info">
                 <em>{{ bus.content.Type }}</em>
                 <span>{{ bus.content.Name }}</span>
-                <b>від {{ bus.content.Price }} грн/місце</b>
+                <!-- <b>від {{ bus.content.Price }} грн/місце</b> -->
               </div>
               <div class="bus_more">
                 <a :href="bus.content.Link" class="btn btn_more">детальніше</a>
