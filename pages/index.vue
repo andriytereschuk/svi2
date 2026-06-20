@@ -86,7 +86,8 @@ export default {
     content() {
       return {
         title: 'svilake',
-        image: 'https://a.storyblok.com/f/153450/580x392/f3bfab5bd5/main.jpg',
+        image:
+          'https://a.storyblok.com/f/153450/1346x934/7438e0e32f/main-2026.png',
         slides: this.slides,
         services: [],
         meta: {
